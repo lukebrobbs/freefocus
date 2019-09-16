@@ -620,3 +620,29 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+.index__talent__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  width: 100%;
+}
+
+.talent__wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.talent__name__wrapper {
+  position: absolute;
+  bottom: 10px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.795);
+}
+
+.talent__name {
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 1;
+}

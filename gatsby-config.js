@@ -7,7 +7,7 @@ console.log(process.env.NODE_ENV)
 module.exports = {
   siteMetadata: {
     title: `Free Focus`,
-    description: ``,
+    description: `Free focus management`,
     author: `@lukebrobbin`,
   },
   plugins: [

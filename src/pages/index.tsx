@@ -1,19 +1,46 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import { graphql } from "gatsby"
+import { IIndexPageProps } from "../types"
+import { Talent } from "../components/Talent"
 
-const IndexPage = () => (
+const IndexPage: FunctionComponent<IIndexPageProps> = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="index__talent__wrapper">
+      {data.allContentfulTalent.edges.map(talent => {
+        return <Talent {...talent} key={talent.node.id} />
+      })}
     </div>
   </Layout>
 )
+
+export const query = graphql`
+  query indexQuery {
+    allContentfulTalent {
+      edges {
+        node {
+          description {
+            content {
+              content {
+                value
+              }
+            }
+          }
+          contactEmail
+          image {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
+          name
+          id
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

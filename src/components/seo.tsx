@@ -13,7 +13,7 @@ import { ISEOProps, ISiteMetaQuery } from "../types"
 const SEO: FunctionComponent<ISEOProps> = ({
   description,
   lang,
-  meta,
+  meta = [],
   title,
 }) => {
   const { site } = useStaticQuery<ISiteMetaQuery>(
