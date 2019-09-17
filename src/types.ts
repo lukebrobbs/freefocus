@@ -42,4 +42,15 @@ export interface IIndexPageProps {
   data: {
     allContentfulTalent: { edges: IAllContentfulTalent[] }
   }
+  path: string
+}
+
+export interface IMainLogoQuery {
+  contentfulAsset: {
+    fluid: FluidObject
+  }
+}
+
+export interface ILayoutProps {
+  path: string
 }

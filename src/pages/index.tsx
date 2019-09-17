@@ -6,8 +6,8 @@ import { graphql } from "gatsby"
 import { IIndexPageProps } from "../types"
 import { Talent } from "../components/Talent"
 
-const IndexPage: FunctionComponent<IIndexPageProps> = ({ data }) => (
-  <Layout>
+const IndexPage: FunctionComponent<IIndexPageProps> = ({ data, path }) => (
+  <Layout path={path}>
     <SEO title="Home" />
     <div className="index__talent__wrapper">
       {data.allContentfulTalent.edges.map(talent => {

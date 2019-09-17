@@ -621,6 +621,47 @@ pre tt:after {
   }
 }
 
+.header__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  padding: 1rem 6rem 0 6rem;
+  width: 100vw;
+  position: relative;
+}
+
+.header__logo {
+  max-width: 40%;
+  cursor: pointer;
+}
+
+.header__listItems {
+  align-self: center;
+  justify-self: end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.header__listItem {
+  margin: 1rem;
+  display: inline;
+  text-transform: uppercase;
+}
+
+.header__link {
+  text-decoration: none;
+  color: rgb(117, 117, 117);
+}
+.header__link:hover {
+  color: black;
+}
+
+.active {
+  color: black;
+}
+
 .index__talent__wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

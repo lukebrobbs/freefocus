@@ -11,22 +11,12 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
-import { ISiteMetaQuery } from "../types"
+import { ISiteMetaQuery, ILayoutProps } from "../types"
 
-const Layout: FunctionComponent = ({ children }) => {
-  const data = useStaticQuery<ISiteMetaQuery>(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout: FunctionComponent<ILayoutProps> = ({ children, path }) => {
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header path={path} />
       <div
         style={{
           margin: `0 auto`,
@@ -35,14 +25,10 @@ const Layout: FunctionComponent = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>Footer here</footer>
+        <footer />
       </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
