@@ -668,6 +668,9 @@ pre tt:after {
   grid-gap: 20px;
   width: 100%;
 }
+.modal__opener {
+  cursor: pointer;
+}
 
 .talent__wrapper {
   position: relative;

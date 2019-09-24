@@ -7,7 +7,7 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({ node }) => {
   const [modalOpen, setModalOpen] = useState(false)
 
   return (
-    <div className="talent__wrapper" onClick={() => setModalOpen(true)}>
+    <div className="talent__wrapper">
       <Modal
         isOpen={modalOpen}
         onRequestClose={() => setModalOpen(false)}
@@ -32,9 +32,15 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({ node }) => {
           </div>
         </div>
       </Modal>
-      <Img fluid={node.image.fluid} alt={node.name} className="talent__image" />
-      <div className="talent__name__wrapper">
-        <p className="talent__name">{node.name}</p>
+      <div className="modal__opener" onClick={() => setModalOpen(true)}>
+        <Img
+          fluid={node.image.fluid}
+          alt={node.name}
+          className="talent__image"
+        />
+        <div className="talent__name__wrapper">
+          <p className="talent__name">{node.name}</p>
+        </div>
       </div>
     </div>
   )
