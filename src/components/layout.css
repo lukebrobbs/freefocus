@@ -675,6 +675,11 @@ pre tt:after {
 .talent__wrapper {
   position: relative;
   text-align: center;
+  transition: transform 0.2s;
+}
+
+.talent__wrapper:hover {
+  transform: scale(1.02);
 }
 
 .talent__name__wrapper {
