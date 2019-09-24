@@ -6,12 +6,10 @@
  */
 
 import React, { FunctionComponent } from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
-import { ISiteMetaQuery, ILayoutProps } from "../types"
+import { ILayoutProps } from "../types"
 
 const Layout: FunctionComponent<ILayoutProps> = ({ children, path }) => {
   return (
@@ -25,7 +23,19 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children, path }) => {
         }}
       >
         <main>{children}</main>
-        <footer />
+        <footer className="footer__wrapper">
+          <div className="footer__line" />
+          <p className="footer__address">
+            Free Focus, 4th Floor, 100 Grays Inn Road, London, WC1X 8AL |{" "}
+            <a
+              className="footer__email"
+              href="mailto: info@freefocus.co.uk"
+              target="_blank"
+            >
+              info@freefocus.co.uk
+            </a>
+          </p>
+        </footer>
       </div>
     </>
   )

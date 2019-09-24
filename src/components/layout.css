@@ -678,7 +678,8 @@ pre tt:after {
   text-transform: uppercase;
   margin: 0;
   opacity: 1;
-  font-size: 0.8em;
+  font-size: 0.7em;
+  font-weight: 600;
 }
 
 .ReactModal__Overlay {
@@ -789,4 +790,30 @@ pre tt:after {
   align-items: flex-start;
   align-content: stretch;
   margin-top: 100px;
+}
+
+.footer__wrapper {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
+.footer__line {
+  height: 1px;
+  background-color: black;
+  margin: 3em 0 0 0;
+}
+
+.footer__address {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  margin: 1em 0 3em;
+  font-weight: 600;
+}
+
+.footer__email {
+  color: #5fc5e3;
+  cursor: pointer;
+  text-decoration: none;
 }
