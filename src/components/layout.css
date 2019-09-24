@@ -687,3 +687,59 @@ pre tt:after {
   margin: 0;
   opacity: 1;
 }
+
+.ReactModal__Overlay {
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.ReactModal__Overlay--before-close {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.talent__modal {
+  position: relative;
+  width: 90vw;
+  top: 50%;
+  left: 50%;
+  right: 40px;
+  bottom: 40px;
+  background: rgb(255, 255, 255, 0.6);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 7px 3px 5px rgba(109, 109, 109, 0.3);
+  -moz-box-shadow: 7px 3px 5px rgba(109, 109, 109, 0.3);
+  box-shadow: 7px 5px 5px rgba(109, 109, 109, 0.3);
+}
+
+.talent__overlay__modal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.talent__modal__image {
+  width: 100%;
+}
+
+.talent__modal__content {
+  position: relative;
+  display: flex;
+}
+
+.talent__description__wrapper {
+  padding-left: 1em;
+}
+
+.talent__description {
+  display: inline-block;
+}

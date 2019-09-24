@@ -27,7 +27,7 @@ export interface IAllContentfulTalent {
         content: {
           value: string
         }[]
-      }
+      }[]
     }
     contactEmail: string
     image: {

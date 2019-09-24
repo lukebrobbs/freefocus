@@ -48,7 +48,10 @@ const Header: FunctionComponent<{ path: string }> = ({ path }) => {
             </Link>
           </li>
           <li className="header__listItem">
-            <Link className={`header__link ${isActive("/contact/")}`} to="/">
+            <Link
+              className={`header__link ${isActive("/contact/")}`}
+              to="/contact"
+            >
               Contact
             </Link>
           </li>
