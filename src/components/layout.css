@@ -723,12 +723,15 @@ pre tt:after {
 }
 
 .talent__modal__image {
-  width: 100%;
+  width: 400px;
+  height: 400px;
 }
 
 .talent__modal__content {
   position: relative;
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .talent__name__header {
@@ -736,6 +739,7 @@ pre tt:after {
 }
 
 .talent__description__wrapper {
+  display: inline;
   padding-left: 1em;
   position: relative;
 }
