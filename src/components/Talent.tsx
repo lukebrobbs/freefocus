@@ -3,6 +3,11 @@ import { IAllContentfulTalent } from "../types"
 import Img from "gatsby-image"
 import Modal from "react-modal"
 import close from "../images/cancel.svg"
+import Instagram from "../images/instagram.svg"
+import Youtube from "../images/youtube.svg"
+import Twitter from "../images/twitter.svg"
+import Facebook from "../images/facebook.svg"
+import { Social } from "./Social"
 
 export const Talent: FunctionComponent<IAllContentfulTalent> = ({ node }) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -35,7 +40,12 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({ node }) => {
               {node.description.content[0].content[0].value}
             </p>
             <a>CONTACT</a>
-            <p>Social media images here</p>
+            <div className="social__wrapper">
+              <Social image={Instagram} alt="Instagram logo" followers="100k" />
+              <Social image={Youtube} alt="Youtube logo" followers="120k" />
+              <Social image={Twitter} alt="Twitter logo" followers="10k" />
+              <Social image={Facebook} alt="Facebook logo" followers="150k" />
+            </div>
           </div>
         </div>
       </Modal>

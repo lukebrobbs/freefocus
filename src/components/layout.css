@@ -746,6 +746,7 @@ pre tt:after {
 
 .talent__description__wrapper {
   padding-left: 1em;
+  position: relative;
 }
 
 .talent__description {
@@ -762,4 +763,30 @@ pre tt:after {
 
 .modal__close__icon {
   margin: 0;
+}
+
+.social__image__wrapper {
+  display: flex;
+  height: 40px;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  margin: 0.1em;
+}
+
+.social__image__count {
+  margin: 0 1em 0 0.1em;
+  align-self: center;
+}
+.social__image {
+  height: 100%;
+  margin: 0 0.2em 0 0;
+}
+
+.social__wrapper {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  align-content: stretch;
+  margin-top: 100px;
 }

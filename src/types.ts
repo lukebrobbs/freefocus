@@ -54,3 +54,9 @@ export interface IMainLogoQuery {
 export interface ILayoutProps {
   path: string
 }
+
+export interface ISocialProps {
+  image: string
+  followers: string
+  alt: string
+}
