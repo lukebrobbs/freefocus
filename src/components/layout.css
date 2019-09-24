@@ -624,7 +624,7 @@ pre tt:after {
 .header__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 0 auto;
+  margin: 0 auto 1em 0;
   padding: 1rem 6rem 0 6rem;
   width: 100vw;
   position: relative;
@@ -745,4 +745,16 @@ pre tt:after {
 
 .talent__description {
   display: inline-block;
+}
+
+.modal__close__button {
+  position: absolute;
+  left: 98%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.modal__close__icon {
+  margin: 0;
 }

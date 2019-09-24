@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState } from "react"
 import { IAllContentfulTalent } from "../types"
 import Img from "gatsby-image"
 import Modal from "react-modal"
+import close from "../images/cancel.svg"
 
 export const Talent: FunctionComponent<IAllContentfulTalent> = ({ node }) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -17,6 +18,12 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({ node }) => {
         overlayClassName="talent__overlay__modal"
       >
         <div className="talent__modal__content">
+          <button
+            className="modal__close__button"
+            onClick={() => setModalOpen(false)}
+          >
+            <img src={close} alt="close popup" className="modal__close__icon" />
+          </button>
           <Img
             fluid={node.image.fluid}
             alt={node.name}
