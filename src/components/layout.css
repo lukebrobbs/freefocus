@@ -1,7 +1,7 @@
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  letter-spacing: 0.2em;
 }
 body {
   margin: 0;
@@ -185,7 +185,6 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -200,7 +199,6 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -230,8 +228,6 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -247,8 +243,6 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -264,8 +258,6 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -281,8 +273,6 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -298,8 +288,6 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -315,8 +303,6 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -591,9 +577,6 @@ td:last-child {
 tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -624,14 +607,14 @@ pre tt:after {
 .header__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 0 auto 1em 0;
+  margin: 0.5em auto 1.5em 0;
   padding: 1rem 6rem 0 6rem;
   width: 100vw;
   position: relative;
 }
 
 .header__logo {
-  max-width: 40%;
+  max-width: 30%;
   cursor: pointer;
 }
 
@@ -648,6 +631,7 @@ pre tt:after {
   margin: 1rem;
   display: inline;
   text-transform: uppercase;
+  font-size: 0.9em;
 }
 
 .header__link {
@@ -694,6 +678,7 @@ pre tt:after {
   text-transform: uppercase;
   margin: 0;
   opacity: 1;
+  font-size: 0.8em;
 }
 
 .ReactModal__Overlay {
@@ -710,6 +695,7 @@ pre tt:after {
 }
 
 .talent__modal {
+  transition: any 200ms ease-in-out;
   position: relative;
   width: 90vw;
   top: 50%;
@@ -744,6 +730,10 @@ pre tt:after {
   display: flex;
 }
 
+.talent__name__header {
+  text-transform: uppercase;
+}
+
 .talent__description__wrapper {
   padding-left: 1em;
   position: relative;
@@ -751,6 +741,13 @@ pre tt:after {
 
 .talent__description {
   display: inline-block;
+  letter-spacing: 0;
+  font-size: 0.9em;
+  width: 75%;
+}
+
+.talent__contact {
+  display: block;
 }
 
 .modal__close__button {
@@ -759,6 +756,7 @@ pre tt:after {
   cursor: pointer;
   border: none;
   background-color: transparent;
+  z-index: 2;
 }
 
 .modal__close__icon {
@@ -776,6 +774,8 @@ pre tt:after {
 .social__image__count {
   margin: 0 1em 0 0.1em;
   align-self: center;
+  text-transform: uppercase;
+  letter-spacing: 0;
 }
 .social__image {
   height: 100%;

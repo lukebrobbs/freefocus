@@ -73,7 +73,12 @@ const SEO: FunctionComponent<ISEOProps> = ({
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+        rel="stylesheet"
+      />
+    </Helmet>
   )
 }
 

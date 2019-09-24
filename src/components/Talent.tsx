@@ -35,11 +35,11 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({ node }) => {
             className="talent__modal__image"
           />
           <div className="talent__description__wrapper">
-            <h1>{node.name}</h1>
+            <h1 className="talent__name__header">{node.name}</h1>
             <p className="talent__description">
               {node.description.content[0].content[0].value}
             </p>
-            <a>CONTACT</a>
+            <a className="talent__contact">CONTACT</a>
             <div className="social__wrapper">
               <Social image={Instagram} alt="Instagram logo" followers="100k" />
               <Social image={Youtube} alt="Youtube logo" followers="120k" />
