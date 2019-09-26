@@ -4,7 +4,7 @@ import React, { FunctionComponent } from "react"
 import { useStaticQuery } from "gatsby"
 import { IMainLogoQuery } from "../types"
 
-const MAIN_LOGO_QUERY = graphql`
+export const MAIN_LOGO_QUERY = graphql`
   query mainLogoQuery {
     contentfulAsset(title: { eq: "Header-Logo" }) {
       fluid {
