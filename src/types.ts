@@ -1,4 +1,5 @@
 import { FluidObject } from "gatsby-image"
+import { TextEmphasisColorProperty } from "csstype"
 
 export interface ISEOProps {
   description?: string
@@ -59,4 +60,22 @@ export interface ISocialProps {
   image: string
   followers: string
   alt: string
+}
+
+type contactFormActionTypes =
+  | "SET_NAME"
+  | "SET_EMAIL"
+  | "SET_SUBJECT"
+  | "SET_MESSAGE"
+
+export interface IContactFormState {
+  name: string
+  email: string
+  subject: string
+  message: string
+}
+
+export interface IContactFormAction {
+  type: contactFormActionTypes
+  value: string
 }

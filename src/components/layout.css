@@ -857,7 +857,6 @@ pre tt:after {
 
 .name__input {
   color: rgb(132, 133, 135);
-  text-transform: uppercase;
   font-size: 0.7em;
   font-weight: 600;
   display: inline-block;
@@ -873,7 +872,6 @@ pre tt:after {
 
 .email__input {
   color: rgb(132, 133, 135);
-  text-transform: uppercase;
   font-size: 0.7em;
   font-weight: 600;
   display: inline-block;
@@ -888,7 +886,6 @@ pre tt:after {
 
 .contactForm__input {
   color: rgb(132, 133, 135);
-  text-transform: uppercase;
   font-size: 0.7em;
   font-weight: 600;
   letter-spacing: 0.1em;
