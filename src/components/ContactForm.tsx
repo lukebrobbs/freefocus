@@ -9,6 +9,7 @@ export const ContactForm = () => {
       </div>
       <input placeholder="Subject" className="contactForm__input" />
       <textarea placeholder="Message" className="contactForm__input textArea" />
+      <button className="contactForm__submitButton">SEND</button>
     </form>
   )
 }
