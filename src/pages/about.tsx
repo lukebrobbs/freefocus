@@ -17,7 +17,7 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
   return (
     <div className="about__container">
       <SEO title="About" />
-      <p>{pageHeader}</p>
+      <p className="about__header">{pageHeader}</p>
       <div className="footer__line" />
       <div className="about__wrapper">
         <div className="about__description__wrapper">

@@ -1,14 +1,11 @@
 import React from "react"
 import SEO from "../components/seo"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { IMainLogoQuery } from "../types"
-import { MAIN_LOGO_QUERY } from "../components/header"
 import Img from "gatsby-image"
 import { ContactForm } from "../components/ContactForm"
 
-const ContactPage = () => {
-  const data = useStaticQuery<IMainLogoQuery>(MAIN_LOGO_QUERY)
-
+const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
   return (
     <div className="contact__container">
       <SEO title="Contact" />
@@ -32,5 +29,15 @@ const ContactPage = () => {
     </div>
   )
 }
+
+export const query = graphql`
+  query contactQuery {
+    contentfulAsset(title: { eq: "Header-Logo" }) {
+      fluid {
+        ...GatsbyContentfulFluid
+      }
+    }
+  }
+`
 
 export default ContactPage
