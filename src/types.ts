@@ -1,5 +1,5 @@
 import { FluidObject } from "gatsby-image"
-import { TextEmphasisColorProperty } from "csstype"
+import { Document } from "@contentful/rich-text-types"
 
 export interface ISEOProps {
   description?: string
@@ -78,4 +78,17 @@ export interface IContactFormState {
 export interface IContactFormAction {
   type: contactFormActionTypes
   value: string
+}
+
+export interface IAboutPageData {
+  allContentfulAbout: {
+    edges: {
+      node: {
+        description: { json: Document }
+        instagramUsername: string
+        pageHeader: string
+        twitterUsername: string
+      }
+    }[]
+  }
 }

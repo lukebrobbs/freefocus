@@ -12,7 +12,7 @@ const ContactPage = () => {
   return (
     <div className="contact__container">
       <SEO title="Contact" />
-      <p>Contact us</p>
+      <p className="contact__header">Contact us</p>
       <div className="footer__line" />
       <div className="contact__wrapper">
         <div className="contact__logo">

@@ -70,7 +70,7 @@ export const ContactForm = () => {
         value={state.message}
         onChange={e => dispatch({ type: "SET_MESSAGE", value: e.target.value })}
       />
-      <button className="contactForm__submitButton">SEND</button>
+      <button className="site__button">SEND</button>
     </form>
   )
 }
