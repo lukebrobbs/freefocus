@@ -18,7 +18,6 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children, path }) => {
       <div
         style={{
           margin: `0 auto`,
-          // padding: `0px 4rem `,
           paddingTop: 0,
         }}
       >
