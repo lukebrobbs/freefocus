@@ -604,6 +604,10 @@ pre tt:after {
   }
 }
 
+main {
+  padding: 0 4rem;
+}
+
 .header__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -655,7 +659,6 @@ pre tt:after {
   width: 100%;
   max-width: 1400px;
   margin: auto;
-  padding: 0 4rem;
 }
 .modal__opener {
   cursor: pointer;
