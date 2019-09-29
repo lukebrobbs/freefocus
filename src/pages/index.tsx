@@ -8,10 +8,12 @@ import { Talent } from "../components/Talent"
 const IndexPage: FunctionComponent<IIndexPageProps> = ({ data }) => (
   <>
     <SEO title="Home" />
-    <div className="index__talent__wrapper">
-      {data.allContentfulTalent.edges.map(talent => {
-        return <Talent {...talent} key={talent.node.id} />
-      })}
+    <div>
+      <div className="index__talent__wrapper">
+        {data.allContentfulTalent.edges.map(talent => {
+          return <Talent {...talent} key={talent.node.id} />
+        })}
+      </div>
     </div>
   </>
 )
