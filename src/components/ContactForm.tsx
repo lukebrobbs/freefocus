@@ -75,7 +75,13 @@ export const ContactForm = () => {
   }
 
   return (
-    <form className={`contactForm__wrapper`} onSubmit={handleSubmit}>
+    <form
+      className={`contactForm__wrapper`}
+      onSubmit={handleSubmit}
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="contact" />
       {state.success ? (
         <p className="contact__header">
           Thank you, your enquiry has been submitted
