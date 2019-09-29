@@ -84,7 +84,7 @@ export const ContactForm = () => {
     >
       <input type="hidden" name="form-name" value="contact" />
       {state.success ? (
-        <p className="contact__header">
+        <p className="contact__header" style={{ marginTop: "1em" }}>
           Thank you, your enquiry has been submitted
         </p>
       ) : (

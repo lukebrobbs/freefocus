@@ -7,24 +7,26 @@ import { ContactForm } from "../components/ContactForm"
 
 const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
   return (
-    <div className="contact__container">
-      <SEO title="Contact" />
-      <p className="contact__header">Contact us</p>
-      <div className="footer__line" />
-      <div className="contact__wrapper">
-        <div className="contact__logo">
-          <div className="contact__image">
-            <Img fluid={data.contentfulAsset.fluid} alt="Free focus Logo" />
+    <div>
+      <div className="contact__container">
+        <SEO title="Contact" />
+        <p className="contact__header">Contact us</p>
+        <div className="footer__line" />
+        <div className="contact__wrapper">
+          <div className="contact__logo">
+            <div className="contact__image">
+              <Img fluid={data.contentfulAsset.fluid} alt="Free focus Logo" />
+            </div>
+            <div className="contact__address">
+              <p>4TH FLOOR</p>
+              <p>100 GRAYS INN ROAD</p>
+              <p>LONDON</p>
+              <p>WC1X 8AL</p>
+              <p>INFO@FREEFOCUS.CO.UK</p>
+            </div>
           </div>
-          <div className="contact__address">
-            <p>4TH FLOOR</p>
-            <p>100 GRAYS INN ROAD</p>
-            <p>LONDON</p>
-            <p>WC1X 8AL</p>
-            <p>INFO@FREEFOCUS.CO.UK</p>
-          </div>
+          <ContactForm />
         </div>
-        <ContactForm />
       </div>
     </div>
   )
