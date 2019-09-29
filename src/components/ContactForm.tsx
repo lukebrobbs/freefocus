@@ -66,7 +66,7 @@ export const ContactForm = () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", state }),
+      body: encode({ "form-name": "contact", ...state }),
     })
       .then(() => dispatch({ type: "SET_SUCCESS" }))
       .catch(error => alert(error))
