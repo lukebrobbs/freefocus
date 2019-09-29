@@ -102,6 +102,7 @@ export const ContactForm = () => {
               onChange={e =>
                 dispatch({ type: "SET_NAME", value: e.target.value })
               }
+              name="name"
               required
             />
             <input
@@ -117,6 +118,7 @@ export const ContactForm = () => {
                 dispatch({ type: "SET_EMAIL", value: e.target.value })
               }
               required
+              name="email"
             />
           </div>
           <input
@@ -131,6 +133,7 @@ export const ContactForm = () => {
             }
             disabled={state.loading}
             required
+            name="subject"
           />
           <textarea
             placeholder="MESSAGE"
@@ -142,6 +145,7 @@ export const ContactForm = () => {
               dispatch({ type: "SET_MESSAGE", value: e.target.value })
             }
             required
+            name="message"
           />
           <button className="site__button" disabled={state.loading}>
             SEND
