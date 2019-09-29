@@ -40,12 +40,12 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({ node }) => {
               {node.description.content[0].content[0].value}
             </p>
             <a className="talent__contact">CONTACT</a>
-            <div className="social__wrapper">
-              <Social image={Instagram} alt="Instagram logo" followers="100k" />
-              <Social image={Youtube} alt="Youtube logo" followers="120k" />
-              <Social image={Twitter} alt="Twitter logo" followers="10k" />
-              <Social image={Facebook} alt="Facebook logo" followers="150k" />
-            </div>
+          </div>
+          <div className="social__wrapper">
+            <Social image={Instagram} alt="Instagram logo" followers="100k" />
+            <Social image={Youtube} alt="Youtube logo" followers="120k" />
+            <Social image={Twitter} alt="Twitter logo" followers="10k" />
+            <Social image={Facebook} alt="Facebook logo" followers="150k" />
           </div>
         </div>
       </Modal>
