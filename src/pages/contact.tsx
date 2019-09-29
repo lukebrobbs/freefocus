@@ -1,6 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { IMainLogoQuery } from "../types"
 import Img from "gatsby-image"
 import { ContactForm } from "../components/ContactForm"

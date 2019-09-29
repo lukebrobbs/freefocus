@@ -868,6 +868,12 @@ main {
 .contactForm__wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+#contact__form__loading {
+  background-color: rgb(234, 235, 239, 0.9);
+  color: rgb(132, 133, 135, 0.4);
 }
 
 .contactForm__emailName__wrapper {
@@ -947,6 +953,11 @@ main {
 
 .site__button:hover {
   background-color: rgb(48, 47, 47);
+  cursor: default;
+}
+
+.site__button:disabled {
+  background-color: rgb(172, 172, 172);
 }
 
 .contact__address {
@@ -1104,5 +1115,65 @@ main {
   .modal__close__button {
     width: 30px;
     left: 95%;
+  }
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  margin-left: -32px;
+  margin-top: -32px;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgb(86, 86, 86);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
   }
 }

@@ -28,19 +28,19 @@ const Header: FunctionComponent<{ path: string }> = ({ path }) => {
       }}
     >
       <div className="header__wrapper">
-        <Img
-          fluid={data.contentfulAsset.fluid}
-          alt="Free focus Logo"
-          className="header__logo"
+        <Link
+          to="/"
+          style={{
+            color: `black`,
+            textDecoration: `none`,
+          }}
         >
-          <Link
-            to="/"
-            style={{
-              color: `black`,
-              textDecoration: `none`,
-            }}
+          <Img
+            fluid={data.contentfulAsset.fluid}
+            alt="Free focus Logo"
+            className="header__logo"
           />
-        </Img>
+        </Link>
         <ul className="header__listItems">
           <li className="header__listItem">
             <Link className={`header__link ${isActive("/")}`} to="/">

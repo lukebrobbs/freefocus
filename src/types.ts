@@ -24,11 +24,7 @@ export interface ISiteMetaQuery {
 export interface IAllContentfulTalent {
   node: {
     description: {
-      content: {
-        content: {
-          value: string
-        }[]
-      }[]
+      json: Document
     }
     contactEmail: string
     image: {
@@ -67,18 +63,25 @@ type contactFormActionTypes =
   | "SET_EMAIL"
   | "SET_SUBJECT"
   | "SET_MESSAGE"
+  | "SET_LOADING"
+  | "SET_SUCCESS"
 
 export interface IContactFormState {
   name: string
   email: string
   subject: string
   message: string
+  loading: boolean
+  success: boolean
 }
 
 export interface IContactFormAction {
   type: contactFormActionTypes
-  value: string
+  value?: string
+  loading?: boolean
 }
+
+export type ContactFormAction = IContactFormAction
 
 export interface IAboutPageData {
   allContentfulAbout: {

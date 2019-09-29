@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useState } from "react"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { IAllContentfulTalent } from "../types"
 import Img from "gatsby-image"
 import Modal from "react-modal"
@@ -37,7 +38,7 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({ node }) => {
           <div className="talent__description__wrapper">
             <h1 className="talent__name__header">{node.name}</h1>
             <p className="talent__description">
-              {node.description.content[0].content[0].value}
+              {documentToReactComponents(node.description.json)}
             </p>
             <a className="talent__contact">CONTACT</a>
           </div>

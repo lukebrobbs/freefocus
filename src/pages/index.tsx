@@ -24,11 +24,7 @@ export const query = graphql`
       edges {
         node {
           description {
-            content {
-              content {
-                value
-              }
-            }
+            json
           }
           contactEmail
           image {
