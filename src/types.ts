@@ -32,7 +32,16 @@ export interface IAllContentfulTalent {
     }
     name: string
     id: string
+    twitterUsername: string
+    instagramUsername: string
+    facebookUsername: string
+    youtubeUsername: string
   }
+}
+
+export interface ITalentModalProps extends IAllContentfulTalent {
+  isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface IIndexPageProps {
@@ -54,8 +63,9 @@ export interface ILayoutProps {
 
 export interface ISocialProps {
   image: string
-  followers: string
+  followers: string | number
   alt: string
+  loading: boolean
 }
 
 type contactFormActionTypes =
@@ -94,4 +104,12 @@ export interface IAboutPageData {
       }
     }[]
   }
+}
+
+interface IFollowerCount {
+  followerCount: number
+}
+export interface ISocialData {
+  twitterFollowers?: IFollowerCount
+  youTubeFollowers?: IFollowerCount
 }

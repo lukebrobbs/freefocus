@@ -953,11 +953,11 @@ main {
 
 .site__button:hover {
   background-color: rgb(48, 47, 47);
-  cursor: default;
 }
 
 .site__button:disabled {
   background-color: rgb(172, 172, 172);
+  cursor: default;
 }
 
 .contact__address {

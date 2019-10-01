@@ -22,7 +22,15 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
               <p>100 GRAYS INN ROAD</p>
               <p>LONDON</p>
               <p>WC1X 8AL</p>
-              <p>INFO@FREEFOCUS.CO.UK</p>
+              <p>
+                <a
+                  className="footer__email"
+                  href="mailto: info@freefocus.co.uk"
+                  target="_blank"
+                >
+                  INFO@FREEFOCUS.CO.UK
+                </a>
+              </p>
             </div>
           </div>
           <ContactForm />

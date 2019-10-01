@@ -26,18 +26,30 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
           </div>
           <div>Insta feed</div>
           <div className="about__social__wrapper">
-            <img
-              src={Instagram}
-              alt="Instagram Logo"
+            <a
               className="social__image"
-              style={{ marginRight: "2em" }}
-            />
-            <img
-              src={Twitter}
-              alt="Twitter Logo"
+              href={`https://www.instagram.com/${instagramUsername}`}
+              target="_blank"
+            >
+              <img
+                src={Instagram}
+                alt="Instagram Logo"
+                className="social__image"
+                style={{ marginRight: "2em" }}
+              />
+            </a>
+            <a
               className="social__image"
-              style={{ marginRight: "2em" }}
-            />
+              href={`https://www.twitter.com/${twitterUsername}`}
+              target="_blank"
+            >
+              <img
+                src={Twitter}
+                alt="Twitter Logo"
+                className="social__image"
+                style={{ marginRight: "2em" }}
+              />
+            </a>
             <p className="social__acount__text">{`@${twitterUsername}`}</p>
           </div>
           <form

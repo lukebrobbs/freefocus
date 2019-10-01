@@ -34,6 +34,10 @@ export const query = graphql`
           }
           name
           id
+          twitterUsername
+          instagramUsername
+          facebookUsername
+          youtubeUsername
         }
       }
     }
