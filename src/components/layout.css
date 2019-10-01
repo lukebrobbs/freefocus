@@ -1074,7 +1074,7 @@ main {
   }
   .contact__container {
     margin: 0 auto;
-    width: 90vw;
+    max-width: 90vw;
   }
   .contact__wrapper {
     grid-template-columns: 1fr;
