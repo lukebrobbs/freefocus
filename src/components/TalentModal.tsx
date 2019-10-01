@@ -74,38 +74,50 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
             <a className="talent__contact">CONTACT</a>
           </div>
           <div className="social__wrapper">
-            <Social
-              image={Instagram}
-              alt="Instagram logo"
-              followers="100000"
-              loading={loading}
-            />
-            <Social
-              image={Youtube}
-              alt="Youtube logo"
-              followers={
-                socialData.youTubeFollowers
-                  ? socialData.youTubeFollowers.followerCount
-                  : ""
-              }
-              loading={loading}
-            />
-            <Social
-              image={Twitter}
-              alt="Twitter logo"
-              followers={
-                socialData.twitterFollowers
-                  ? socialData.twitterFollowers.followerCount
-                  : ""
-              }
-              loading={loading}
-            />
-            <Social
-              image={Facebook}
-              alt="Facebook logo"
-              followers="150000"
-              loading={loading}
-            />
+            {node.instagramUsername && (
+              <Social
+                image={Instagram}
+                alt="Instagram logo"
+                followers="100000"
+                loading={loading}
+                to={`https://www.instagram.com/${node.instagramUsername}`}
+              />
+            )}
+            {node.youtubeUsername && (
+              <Social
+                image={Youtube}
+                alt="Youtube logo"
+                followers={
+                  socialData.youTubeFollowers
+                    ? socialData.youTubeFollowers.followerCount
+                    : ""
+                }
+                loading={loading}
+                to={`https://www.youtube.com/user/${node.youtubeUsername}`}
+              />
+            )}
+            {node.twitterUsername && (
+              <Social
+                image={Twitter}
+                alt="Twitter logo"
+                followers={
+                  socialData.twitterFollowers
+                    ? socialData.twitterFollowers.followerCount
+                    : ""
+                }
+                loading={loading}
+                to={`https://twitter.com/${node.twitterUsername}`}
+              />
+            )}
+            {node.facebookUsername && (
+              <Social
+                image={Facebook}
+                alt="Facebook logo"
+                followers="150000"
+                loading={loading}
+                to={`https://www.facebook.com/4${node.facebookUsername}`}
+              />
+            )}
           </div>
         </div>
       </Modal>

@@ -66,6 +66,7 @@ export interface ISocialProps {
   followers: string | number
   alt: string
   loading: boolean
+  to: string
 }
 
 type contactFormActionTypes =

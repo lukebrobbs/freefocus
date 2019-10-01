@@ -605,14 +605,14 @@ pre tt:after {
 }
 
 main {
-  padding: 0 1rem;
+  padding: 0 4rem;
 }
 
 .header__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 1.5em auto 1.5em auto;
-  max-width: 80vw;
+  max-width: 90vw;
   position: relative;
 }
 
@@ -654,7 +654,7 @@ main {
 
 .index__talent__wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-gap: 20px;
   width: 100%;
   max-width: 1400px;
@@ -1015,6 +1015,9 @@ main {
 }
 
 @media only screen and (max-width: 768px) {
+  main {
+    padding: 0 1rem;
+  }
   .header__wrapper {
     grid-template-columns: 1fr;
     align-items: center;
