@@ -108,11 +108,8 @@ export interface IAboutPageData {
   }
 }
 
-interface IFollowerCount {
-  followerCount: number
-}
 export interface ISocialData {
-  twitterFollowers?: IFollowerCount
-  youTubeFollowers?: IFollowerCount
-  instagramFollowers?: IFollowerCount
+  twitterFollowerCount?: number
+  youTubeFollowerCount?: string
+  instagramFollowerCount?: number
 }

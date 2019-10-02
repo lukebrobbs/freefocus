@@ -20,11 +20,11 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
   const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
-    if (isOpen && !Object.keys(socialData).length) {
+    if (!Object.keys(socialData).length) {
       setLoading(true)
       getSocial()
     }
-  }, [isOpen])
+  }, [])
 
   const getSocial = async () => {
     const postBody = {
@@ -94,8 +94,8 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
                 image={Instagram}
                 alt="Instagram logo"
                 followers={
-                  socialData.instagramFollowers
-                    ? socialData.instagramFollowers.followerCount
+                  socialData.instagramFollowerCount
+                    ? socialData.instagramFollowerCount
                     : ""
                 }
                 loading={loading}
@@ -107,8 +107,8 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
                 image={Youtube}
                 alt="Youtube logo"
                 followers={
-                  socialData.youTubeFollowers
-                    ? socialData.youTubeFollowers.followerCount
+                  socialData.youTubeFollowerCount
+                    ? socialData.youTubeFollowerCount
                     : ""
                 }
                 loading={loading}
@@ -120,8 +120,8 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
                 image={Twitter}
                 alt="Twitter logo"
                 followers={
-                  socialData.twitterFollowers
-                    ? socialData.twitterFollowers.followerCount
+                  socialData.twitterFollowerCount
+                    ? socialData.twitterFollowerCount
                     : ""
                 }
                 loading={loading}
