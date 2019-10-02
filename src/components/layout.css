@@ -686,7 +686,7 @@ main {
   text-transform: uppercase;
   margin: 0;
   opacity: 1;
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-weight: 600;
 }
 
@@ -1064,6 +1064,7 @@ main {
   .talent__description__wrapper {
     padding-left: 0;
   }
+
   .talent__description {
     display: block;
     margin: 0 auto 2em auto;
@@ -1120,6 +1121,12 @@ main {
   }
   .about__header {
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .talent__name {
+    font-size: 1.2em;
   }
 }
 
