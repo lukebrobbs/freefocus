@@ -36,6 +36,7 @@ export interface IAllContentfulTalent {
     instagramUsername: string
     facebookUsername: string
     youtubeUsername: string
+    tier: number
   }
 }
 
@@ -113,4 +114,5 @@ interface IFollowerCount {
 export interface ISocialData {
   twitterFollowers?: IFollowerCount
   youTubeFollowers?: IFollowerCount
+  instagramFollowers?: IFollowerCount
 }

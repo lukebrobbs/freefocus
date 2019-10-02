@@ -769,7 +769,11 @@ main {
 }
 
 .talent__contact {
-  display: block;
+  color: #314b53;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  width: 30px;
 }
 
 .modal__close__button {
@@ -799,6 +803,7 @@ main {
   align-self: center;
   text-transform: uppercase;
   letter-spacing: 0;
+  min-width: 50px;
 }
 .social__image {
   height: 100%;

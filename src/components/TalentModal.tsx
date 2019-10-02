@@ -7,6 +7,7 @@ import Instagram from "../images/instagram.svg"
 import Youtube from "../images/youtube.svg"
 import Twitter from "../images/twitter.svg"
 import Facebook from "../images/facebook.svg"
+import Contact from "../images/contact.png"
 import { Social } from "./Social"
 import { ITalentModalProps, ISocialData } from "../types"
 
@@ -29,19 +30,26 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
     const postBody = {
       twitterUsername: node.twitterUsername,
       youTubeUsername: node.youtubeUsername,
+      instagramUsername: node.instagramUsername,
     }
     const headers = new Headers({
       "content-Type": "application/json",
     })
-    const response = await fetch(`http://localhost:8080/allSocial/followers`, {
-      method: "POST",
-      body: JSON.stringify(postBody),
-      headers,
-    })
-    const data: ISocialData = await response.json()
-    console.log(data)
-    setSocialData(data)
-    setLoading(false)
+    try {
+      const response = await fetch(
+        `${process.env.SOCIAL_API_URL}/allSocial/followers`,
+        {
+          method: "POST",
+          body: JSON.stringify(postBody),
+          headers,
+        }
+      )
+      const data: ISocialData = await response.json()
+      setSocialData(data)
+      setLoading(false)
+    } catch (err) {
+      setLoading(false)
+    }
   }
 
   return (
@@ -71,14 +79,25 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
             <div className="talent__description">
               {documentToReactComponents(node.description.json)}
             </div>
-            <a className="talent__contact">CONTACT</a>
+            <a
+              className="talent__contact"
+              href={`mailto: ${node.contactEmail}?subject=${node.name}`}
+              target="_blank"
+            >
+              <img src={Contact} alt="contact us" />
+              <p style={{ alignSelf: "center", marginLeft: "10px" }}>CONTACT</p>
+            </a>
           </div>
           <div className="social__wrapper">
             {node.instagramUsername && (
               <Social
                 image={Instagram}
                 alt="Instagram logo"
-                followers="100000"
+                followers={
+                  socialData.instagramFollowers
+                    ? socialData.instagramFollowers.followerCount
+                    : ""
+                }
                 loading={loading}
                 to={`https://www.instagram.com/${node.instagramUsername}`}
               />
@@ -113,7 +132,7 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
               <Social
                 image={Facebook}
                 alt="Facebook logo"
-                followers="150000"
+                followers=""
                 loading={loading}
                 to={`https://www.facebook.com/4${node.facebookUsername}`}
               />
