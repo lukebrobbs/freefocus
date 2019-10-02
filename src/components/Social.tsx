@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react"
-import Skeleton from "react-loading-skeleton"
 import numeral from "numeral"
 import { ISocialProps } from "../types"
+import { LoadingSpinner } from "./LoadingSpinner"
 
 export const Social: FunctionComponent<ISocialProps> = props => {
   return (
@@ -11,7 +11,9 @@ export const Social: FunctionComponent<ISocialProps> = props => {
       </a>
       <div className="social__image__count">
         {props.loading ? (
-          <Skeleton width={50} />
+          <div style={{ position: "relative" }}>
+            <LoadingSpinner />
+          </div>
         ) : props.followers ? (
           +props.followers > 1000 ? (
             numeral(+props.followers).format("0.0a")
