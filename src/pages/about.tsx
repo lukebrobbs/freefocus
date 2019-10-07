@@ -6,6 +6,7 @@ import { graphql } from "gatsby"
 import { IAboutPageData } from "../types"
 import Instagram from "../images/instagram.svg"
 import Twitter from "../images/twitter.svg"
+import { InstaFeed } from "../components/InstaFeed"
 
 const AboutPage = ({ data }: { data: IAboutPageData }) => {
   const {
@@ -24,7 +25,7 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
           <div className="about__description__wrapper">
             {documentToReactComponents(description.json)}
           </div>
-          <div>Insta feed</div>
+          <InstaFeed />
           <div className="about__social__wrapper">
             <a
               className="social__image"
@@ -55,8 +56,11 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
           <form
             action={`https://www.instagram.com/${instagramUsername}`}
             target="_blank"
+            style={{ display: "flex" }}
           >
-            <button className="site__button">FOLLOW US</button>
+            <button className="site__button" style={{ margin: "auto" }}>
+              FOLLOW US
+            </button>
           </form>
         </div>
       </div>

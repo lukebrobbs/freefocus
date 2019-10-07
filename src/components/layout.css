@@ -1004,7 +1004,6 @@ main {
 .about__social__wrapper {
   display: flex;
   justify-content: flex-start;
-  width: 50%;
   height: 40px;
 }
 
