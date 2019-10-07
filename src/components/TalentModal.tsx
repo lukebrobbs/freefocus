@@ -37,7 +37,7 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
     })
     try {
       const response = await fetch(
-        `${process.env.SOCIAL_API_URL}/allSocial/followers`,
+        `${process.env.GATSBY_SOCIAL_API_URL}/allSocial/followers`,
         {
           method: "POST",
           body: JSON.stringify(postBody),
@@ -132,7 +132,7 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
               <Social
                 image={Facebook}
                 alt="Facebook logo"
-                followers=""
+                followers={node.facebookFollowerCount}
                 loading={loading}
                 to={`https://www.facebook.com/4${node.facebookUsername}`}
               />

@@ -37,6 +37,7 @@ export interface IAllContentfulTalent {
     facebookUsername: string
     youtubeUsername: string
     tier: number
+    facebookFollowerCount: number
   }
 }
 
