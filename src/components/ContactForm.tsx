@@ -1,4 +1,5 @@
 import React, { useReducer } from "react"
+import { Map } from "./Map"
 import { IContactFormState, ContactFormAction } from "../types"
 import { LoadingSpinner } from "./LoadingSpinner"
 

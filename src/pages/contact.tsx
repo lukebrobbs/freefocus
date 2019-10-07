@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import { IMainLogoQuery } from "../types"
 import Img from "gatsby-image"
 import { ContactForm } from "../components/ContactForm"
+import { Map } from "../components/Map"
 
 const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
   return (
@@ -12,6 +13,7 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
         <SEO title="Contact" />
         <p className="contact__header">Contact us</p>
         <div className="footer__line" />
+
         <div className="contact__wrapper">
           <div className="contact__logo">
             <div className="contact__image">
@@ -31,6 +33,9 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
                   INFO@FREEFOCUS.CO.UK
                 </a>
               </p>
+            </div>
+            <div className="contact__map__wrapper">
+              <Map />
             </div>
           </div>
           <ContactForm />
