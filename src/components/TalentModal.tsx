@@ -20,11 +20,11 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
   const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
-    if (!Object.keys(socialData).length) {
+    if (isOpen && !Object.keys(socialData).length) {
       setLoading(true)
       getSocial()
     }
-  }, [])
+  }, [isOpen])
 
   const getSocial = async () => {
     const postBody = {

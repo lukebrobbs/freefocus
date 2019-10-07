@@ -25,7 +25,7 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
           <div className="about__description__wrapper">
             {documentToReactComponents(description.json)}
           </div>
-          {document !== undefined && <InstaFeed />}
+          <InstaFeed />
           <div className="about__social__wrapper">
             <a
               className="social__image"
