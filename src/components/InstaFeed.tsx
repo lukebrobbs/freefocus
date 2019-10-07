@@ -17,7 +17,7 @@ export const InstaFeed = () => {
           js.id = id
           js.src = "https://embedsocial.com/embedscript/in.js"
           d.getElementsByTagName("head")[0].appendChild(js)
-        })(document, "script", "EmbedSocialInstagramScript")}
+        })(document || undefined, "script", "EmbedSocialInstagramScript")}
       </script>
     </>
   )
