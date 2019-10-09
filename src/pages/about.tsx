@@ -56,9 +56,12 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
           <form
             action={`https://www.instagram.com/${instagramUsername}`}
             target="_blank"
-            style={{ display: "flex" }}
+            className="follow__button"
           >
-            <button className="site__button" style={{ margin: "auto" }}>
+            <button
+              className="site__button follow__button"
+              style={{ margin: "auto" }}
+            >
               FOLLOW US
             </button>
           </form>

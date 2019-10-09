@@ -857,6 +857,10 @@ main {
   margin: 3em 0;
 }
 
+.follow__button {
+  display: flex;
+}
+
 .contact__container {
   max-width: 70vw;
   margin: 4em auto 0 auto;
@@ -1008,6 +1012,11 @@ main {
   height: 40px;
 }
 
+.instafeed__wrapper {
+  height: 50vh;
+  overflow: hidden;
+}
+
 .social__acount__text {
   align-self: center;
   margin: 0;
@@ -1124,12 +1133,28 @@ main {
   .about__wrapper {
     grid-template-columns: 1fr;
   }
+
   .about__description__wrapper {
     width: 100%;
     line-height: 1.1;
   }
+  .instafeed__wrapper {
+    height: 530px;
+    /* overflow: in; */
+  }
+  .follow__button {
+    display: none;
+  }
   .about__header {
     text-align: center;
+  }
+  .about__social__wrapper {
+    display: block;
+    text-align: center;
+    margin-top: 1em;
+  }
+  .social__acount__text {
+    margin-top: 0.5em;
   }
 }
 
