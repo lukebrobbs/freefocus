@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 
 export const InstaFeed = () => {
   useEffect(() => {
+    console.log("here1")
     if (typeof window !== `undefined`) {
+      console.log("here2")
       const script = document.createElement("script")
       script.src =
         "https://instafeed.assets.pixlee.com/assets/pixlee_widget_1_0_0.js"
