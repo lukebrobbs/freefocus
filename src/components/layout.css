@@ -1114,12 +1114,12 @@ p {
   .contact__wrapper {
     grid-template-columns: 1fr;
     grid-gap: 20px;
-    margin: 3em 0;
+    margin: 0;
   }
   .contact__header {
     text-align: center;
   }
-  .contact__logo {
+  .contact__logo .gatsby-image-wrapper {
     display: none;
   }
   .contact__address {
