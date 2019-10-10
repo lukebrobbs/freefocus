@@ -1061,7 +1061,7 @@ main {
   }
 
   .ReactModal__Overlay--after-open {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.6);
   }
 
   .talent__modal__image {
@@ -1097,7 +1097,8 @@ main {
   }
   .modal__close__button {
     width: 30px;
-    left: 90%;
+    left: auto;
+    right: 0;
   }
   .contact__container {
     margin: 0 auto;
@@ -1167,7 +1168,8 @@ main {
 @media only screen and (max-width: 380px) {
   .modal__close__button {
     width: 30px;
-    left: 95%;
+    left: auto;
+    right: 0;
   }
 }
 
