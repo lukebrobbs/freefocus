@@ -112,7 +112,7 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
                     : ""
                 }
                 loading={loading}
-                to={`https://www.youtube.com/user/${node.youtubeUsername}`}
+                to={`https://www.youtube.com/channel/${node.youtubeUsername}`}
               />
             )}
             {node.twitterUsername && (
@@ -134,7 +134,7 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
                 alt="Facebook logo"
                 followers={node.facebookFollowerCount}
                 loading={loading}
-                to={`https://www.facebook.com/4${node.facebookUsername}`}
+                to={`https://www.facebook.com/${node.facebookUsername}`}
               />
             )}
           </div>

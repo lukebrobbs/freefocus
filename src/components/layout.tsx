@@ -25,7 +25,7 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children, path }) => {
         <footer className="footer__wrapper">
           <div className="footer__line" />
           <p className="footer__address">
-            Free Focus, 4th Floor, 100 Grays Inn Road, London, WC1X 8AL |{" "}
+            Free Focus, 4th Floor, 100 Grays Inn Road, London, WC1X 8AL{" "}
             <a
               className="footer__email"
               href="mailto: info@freefocus.co.uk"
