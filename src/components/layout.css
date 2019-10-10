@@ -774,6 +774,13 @@ main {
   cursor: pointer;
   display: flex;
   width: 30px;
+  height: 31px;
+  margin: 1em 0;
+}
+
+.talent__contact img,
+p {
+  margin-bottom: 0;
 }
 
 .modal__close__button {
