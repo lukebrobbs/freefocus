@@ -5,7 +5,7 @@ export const InstaFeed = () => {
     if (typeof window !== `undefined`) {
       const script = document.createElement("script")
       script.src =
-        "http://instafeed.assets.pixlee.com/assets/pixlee_widget_1_0_0.js"
+        "https://instafeed.assets.pixlee.com/assets/pixlee_widget_1_0_0.js"
       script.async = true
       window.PixleeAsyncInit = function() {
         Pixlee.init({ apiKey: process.env.GATSBY_PIXEL_API_KEY })
