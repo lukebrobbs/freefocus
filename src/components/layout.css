@@ -707,7 +707,7 @@ main {
   transition: any 200ms ease-in-out;
   position: relative;
   width: 80vw;
-  max-height: 90vh;
+  max-height: 70vh;
   top: 50%;
   left: 50%;
   right: 40px;
@@ -716,7 +716,7 @@ main {
   overflow: auto;
   border-radius: 4px;
   outline: none;
-  padding: 20px;
+  padding: 1em;
   transform: translate(-50%, -50%);
   -webkit-box-shadow: 7px 3px 5px rgba(109, 109, 109, 0.3);
   -moz-box-shadow: 7px 3px 5px rgba(109, 109, 109, 0.3);
@@ -784,17 +784,20 @@ p {
 }
 
 .modal__close__button {
-  width: 30px;
+  width: 1.5em;
+  height: 1.5em;
+  background: url("../images/cancel.svg") no-repeat;
   position: absolute;
-  left: 95%;
+  left: 97%;
   cursor: pointer;
   border: none;
   background-color: transparent;
-  z-index: 2;
+  z-index: 5;
 }
 
 .modal__close__icon {
   margin: 0;
+  z-index: 6;
 }
 
 .social__image__wrapper {

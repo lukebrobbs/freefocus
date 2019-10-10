@@ -2,7 +2,6 @@ import React, { FunctionComponent, useEffect, useState } from "react"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Modal from "react-modal"
 import Img from "gatsby-image"
-import close from "../images/cancel.svg"
 import Instagram from "../images/instagram.svg"
 import Youtube from "../images/youtube.svg"
 import Twitter from "../images/twitter.svg"
@@ -66,9 +65,7 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
           <button
             className="modal__close__button"
             onClick={() => setIsOpen(false)}
-          >
-            <img src={close} alt="close popup" className="modal__close__icon" />
-          </button>
+          />
           <Img
             fluid={node.image.fluid}
             alt={node.name}
