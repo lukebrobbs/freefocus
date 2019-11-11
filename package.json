@@ -18,6 +18,7 @@
     "gatsby-source-contentful": "^2.1.44",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-transformer-sharp": "^2.2.19",
+    "lodash.shuffle": "^4.2.0",
     "numeral": "^2.0.6",
     "prop-types": "^15.7.2",
     "react": "^16.10.0",

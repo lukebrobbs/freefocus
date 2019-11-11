@@ -4,9 +4,10 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import { IIndexPageProps } from "../types"
 import { Talent } from "../components/Talent"
+import shuffle from "lodash.shuffle"
 
 const IndexPage: FunctionComponent<IIndexPageProps> = ({ data }) => {
-  data.allContentfulTalent.edges.sort((a, b) => {
+  const sortedArr = shuffle(data.allContentfulTalent.edges).sort((a, b) => {
     return a.node.tier - b.node.tier
   })
   return (
@@ -14,7 +15,7 @@ const IndexPage: FunctionComponent<IIndexPageProps> = ({ data }) => {
       <SEO title="Home" />
       <div>
         <div className="index__talent__wrapper">
-          {data.allContentfulTalent.edges.map(talent => {
+          {sortedArr.map(talent => {
             return <Talent {...talent} key={talent.node.id} />
           })}
         </div>
