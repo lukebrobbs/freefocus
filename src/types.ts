@@ -21,7 +21,7 @@ export interface ISiteMetaQuery {
   }
 }
 
-export interface IAllContentfulTalent {
+interface IAllContentfulNode {
   node: {
     description: {
       json: Document
@@ -36,12 +36,18 @@ export interface IAllContentfulTalent {
     instagramUsername: string
     facebookUsername: string
     youtubeUsername: string
+    tikTokUsername: string
     tier: number
     facebookFollowerCount: number
+    tikTokFollowerCount: number
   }
 }
 
-export interface ITalentModalProps extends IAllContentfulTalent {
+export interface IAllContentfulTalent extends IAllContentfulNode {
+  defaultOpen: boolean
+}
+
+export interface ITalentModalProps extends IAllContentfulNode {
   isOpen: boolean
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
@@ -50,6 +56,7 @@ export interface IIndexPageProps {
   data: {
     allContentfulTalent: { edges: IAllContentfulTalent[] }
   }
+  location: Location
   path: string
 }
 

@@ -6,6 +6,7 @@ import Instagram from "../images/instagram.svg"
 import Youtube from "../images/youtube.svg"
 import Twitter from "../images/twitter.svg"
 import Facebook from "../images/facebook.svg"
+import TikTok from "../images/tikTok.svg"
 import Contact from "../images/contact.png"
 import { Social } from "./Social"
 import { ITalentModalProps, ISocialData } from "../types"
@@ -55,7 +56,9 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
     <>
       <Modal
         isOpen={isOpen}
-        onRequestClose={() => setIsOpen(false)}
+        onRequestClose={() => {
+          setIsOpen(false)
+        }}
         contentLabel="Talent Modal"
         closeTimeoutMS={200}
         className="talent__modal"
@@ -64,7 +67,9 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
         <div className="talent__modal__content">
           <button
             className="modal__close__button"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false)
+            }}
           />
           <Img
             fluid={node.image.fluid}
@@ -132,6 +137,15 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
                 followers={node.facebookFollowerCount}
                 loading={loading}
                 to={`https://www.facebook.com/${node.facebookUsername}`}
+              />
+            )}
+            {node.tikTokFollowerCount && (
+              <Social
+                image={TikTok}
+                alt="TikTok logo"
+                followers={node.tikTokFollowerCount}
+                loading={loading}
+                to={`https://www.tiktok.com/@${node.tikTokUsername}`}
               />
             )}
           </div>
