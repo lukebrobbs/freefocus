@@ -63,9 +63,11 @@ export const query = graphql`
           instagramUsername
           facebookUsername
           youtubeUsername
+          tikTokUsername
           tier
           contactEmail
           facebookFollowerCount
+          tikTokFollowerCount
         }
       }
     }
