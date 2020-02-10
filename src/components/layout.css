@@ -1079,6 +1079,7 @@ p {
     height: 200px;
     margin: 1em auto;
   }
+
   .talent__modal__content {
     grid-template-areas:
       "image"
@@ -1104,6 +1105,11 @@ p {
   .social__image__wrapper {
     display: block;
     margin: 1em auto;
+    text-align: center;
+  }
+  .social__image {
+    height: 100%;
+    margin: 0 0.5em 0 0;
   }
   .modal__close__button {
     width: 30px;
