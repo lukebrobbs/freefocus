@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState } from "react"
 import { IAllContentfulTalent } from "../types"
 import Img from "gatsby-image"
 import { TalentModal } from "./TalentModal"
+import { navigate } from "gatsby"
 
 export const Talent: FunctionComponent<IAllContentfulTalent> = ({
   node,
@@ -15,11 +16,25 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({
     }
   }
   return (
-    <div className="talent__wrapper">
+    <div
+      className="talent__wrapper"
+      id={node.name
+        .toLowerCase()
+        .replace(" ", "+")
+        .trim()}
+    >
       <TalentModal node={node} isOpen={isOpen} setIsOpen={setIsopen} />
       <div
         className="modal__opener"
         onClick={() => {
+          history.pushState(
+            null,
+            "",
+            `?talent=${node.name
+              .toLowerCase()
+              .replace(" ", "+")
+              .trim()}`
+          )
           setIsopen(true)
         }}
         onKeyPress={handleKeyPress}

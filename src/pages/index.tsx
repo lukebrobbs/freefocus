@@ -1,7 +1,12 @@
-import React, { FunctionComponent, useCallback, useMemo } from "react"
+import React, {
+  FunctionComponent,
+  useCallback,
+  useMemo,
+  useEffect,
+} from "react"
 
 import SEO from "../components/seo"
-import { graphql, navigate } from "gatsby"
+import { graphql } from "gatsby"
 import { IIndexPageProps } from "../types"
 import { Talent } from "../components/Talent"
 import shuffle from "lodash.shuffle"
@@ -18,6 +23,7 @@ const IndexPage: FunctionComponent<IIndexPageProps> = props => {
     }),
     []
   )
+
   return (
     <>
       <SEO title="Home" />

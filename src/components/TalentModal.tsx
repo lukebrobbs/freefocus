@@ -52,25 +52,23 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
     }
   }
 
+  const handleClick = () => {
+    history.replaceState(null, "", "/")
+    setIsOpen(false)
+  }
+
   return (
     <>
       <Modal
         isOpen={isOpen}
-        onRequestClose={() => {
-          setIsOpen(false)
-        }}
+        onRequestClose={handleClick}
         contentLabel="Talent Modal"
         closeTimeoutMS={200}
         className="talent__modal"
         overlayClassName="talent__overlay__modal"
       >
         <div className="talent__modal__content">
-          <button
-            className="modal__close__button"
-            onClick={() => {
-              setIsOpen(false)
-            }}
-          />
+          <button className="modal__close__button" onClick={handleClick} />
           <Img
             fluid={node.image.fluid}
             alt={node.name}
