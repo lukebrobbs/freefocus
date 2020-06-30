@@ -74,6 +74,7 @@ export const query = graphql`
           contactEmail
           facebookFollowerCount
           tikTokFollowerCount
+          instagramFollowerCount
         }
       }
     }

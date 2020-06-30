@@ -89,14 +89,12 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
             </a>
           </div>
           <div className="social__wrapper">
-            {node.instagramUsername && (
+            {node.instagramFollowerCount && (
               <Social
                 image={Instagram}
                 alt="Instagram logo"
                 followers={
-                  socialData.instagramFollowerCount
-                    ? socialData.instagramFollowerCount
-                    : ""
+                  node.instagramFollowerCount ? node.instagramFollowerCount : ""
                 }
                 loading={loading}
                 to={`https://www.instagram.com/${node.instagramUsername}`}
