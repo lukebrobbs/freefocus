@@ -1,20 +1,25 @@
 import React, { useContext } from "react"
 import { UserContext } from "../../providers/UserProvider"
 import { LoadingSpinner } from "../../components/LoadingSpinner"
+import { navigate } from "gatsby"
 
 const Portal = () => {
-  const { signOut, user } = useContext(UserContext)
+  const { signOut, user, loading } = useContext(UserContext)
 
   const handleSignOut = () => {
     signOut()
   }
 
-  if (!user) {
+  if (loading) {
     return (
       <div className="portal__signin__loading__wrapper">
         <LoadingSpinner />
       </div>
     )
+  }
+  if (!user) {
+    navigate("/portal/login")
+    return <></>
   }
 
   return (

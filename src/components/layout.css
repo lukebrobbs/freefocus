@@ -1299,3 +1299,11 @@ p {
   margin-bottom: 0;
   align-self: center;
 }
+
+.portal__signUp__wrapper {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 5rem auto 0 auto;
+}

@@ -1,16 +1,26 @@
 import React, {
   createContext,
-  useEffect,
-  useState,
   FunctionComponent,
   useReducer,
+  useEffect,
 } from "react"
-import { auth, generateUserDocument } from "../firebase"
+import { auth, generateUserDocument, getUserDocument } from "../firebase"
 import { navigate } from "gatsby"
 
 interface Context {
   user: firebase.firestore.DocumentData
   signOut: () => void
+
+  signIn: (
+    email: string,
+    password: string
+  ) => Promise<firebase.firestore.DocumentData>
+
+  signUp: (
+    email: string,
+    password: string,
+    name: string
+  ) => Promise<firebase.firestore.DocumentData>
   loading: boolean
   error: string
 }
@@ -43,13 +53,14 @@ const userReducer = (state, action): State => {
             ...state,
             user: action.user,
             loading: false,
+            status: "IDLE",
           }
         case "SET_ERR":
           return {
             ...state,
             loading: false,
             error: action.error,
-            status: "ERROR",
+            status: "IDLE",
           }
       }
     default:
@@ -60,7 +71,9 @@ const userReducer = (state, action): State => {
 const defaultContext = {
   user: null,
   signOut: () => {},
-  loading: false,
+  signIn: (email: string, password: string) => new Promise(null),
+  signUp: (email: string, password: string, name: string) => null,
+  loading: true,
   error: "",
 }
 export const UserContext = createContext<Context>(defaultContext)
@@ -71,29 +84,56 @@ const UserProvider: FunctionComponent = ({ children }) => {
     status: "IDLE",
   })
 
-  const signOut = () => {
-    dispatch({ type: "SIGN_OUT" })
-    auth.signOut()
-  }
-
   useEffect(() => {
-    auth.onAuthStateChanged(async userAuth => {
-      if (!userAuth) {
-        navigate("/portal/login")
+    auth.onAuthStateChanged(async authUser => {
+      if (!state.user && authUser) {
+        dispatch({ type: "AUTH_STATE_CHANGE" })
+        const user = await getUserDocument(authUser.uid)
+        dispatch({ type: "SET_USER", user })
+      } else {
+        dispatch({ type: "SET_USER", user: null })
       }
-      dispatch({ type: "AUTH_STATE_CHANGE" })
-      generateUserDocument(userAuth, {})
-        .then(user => {
-          dispatch({ type: "SET_USER", user: user || null })
-        })
-        .catch(err => {
-          dispatch({ type: "SET_ERR", error: err })
-        })
     })
   }, [])
 
+  const signOut = () => {
+    dispatch({ type: "SIGN_OUT" })
+    auth.signOut().then(() => {
+      navigate("/portal/login")
+    })
+  }
+
+  const signIn = async (email: string, password: string) => {
+    dispatch({ type: "AUTH_STATE_CHANGE" })
+
+    try {
+      const doc = await auth.signInWithEmailAndPassword(email, password)
+      const user = await getUserDocument(doc.user.uid)
+      dispatch({ type: "SET_USER", user })
+      return user
+    } catch (err) {
+      dispatch({ type: "SET_ERR", error: err.message })
+      throw new Error(err)
+    }
+  }
+
+  const signUp = async (email: string, password: string, name: string) => {
+    dispatch({ type: "AUTH_STATE_CHANGE" })
+    try {
+      const doc = await auth.createUserWithEmailAndPassword(email, password)
+      const newUser = await generateUserDocument(doc.user, {
+        displayName: name,
+      })
+      dispatch({ type: "SET_USER", user: newUser })
+      return newUser
+    } catch (err) {
+      dispatch({ type: "SET_ERR", error: err.message })
+      throw new Error(err)
+    }
+  }
+
   return (
-    <UserContext.Provider value={{ ...state, signOut }}>
+    <UserContext.Provider value={{ ...state, signOut, signIn, signUp }}>
       {children}
     </UserContext.Provider>
   )

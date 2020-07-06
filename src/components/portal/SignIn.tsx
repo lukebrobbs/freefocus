@@ -1,22 +1,21 @@
-import React, { FunctionComponent, useState } from "react"
+import React, { FunctionComponent, useState, useContext } from "react"
 import { auth } from "../../firebase"
 import { navigate } from "gatsby"
+import { UserContext } from "../../providers/UserProvider"
 
 export const SignIn: FunctionComponent = () => {
+  const { signIn, error } = useContext(UserContext)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [error, setError] = useState(null)
 
   const signInWithEmailAndPasswordHandler = (event, email, password) => {
     event.preventDefault()
-    auth
-      .signInWithEmailAndPassword(email, password)
+    signIn(email, password)
       .then(() => {
         navigate("/portal")
       })
-      .catch(error => {
-        setError("Invalid email or password")
-        console.error("Error signing in with password and email", error)
+      .catch(err => {
+        console.error("Error signing in with password and email", err)
       })
   }
 

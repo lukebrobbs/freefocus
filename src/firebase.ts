@@ -28,12 +28,14 @@ export const generateUserDocument = async (
   if (!snapshot.exists) {
     const { email, displayName, photoURL } = user
     try {
-      await userRef.set({
+      const updatedData = {
         displayName,
         email,
         photoURL,
         ...additionalData,
-      })
+      }
+
+      await userRef.set(updatedData)
     } catch (error) {
       console.error("Error creating user document", error)
     }
@@ -41,7 +43,7 @@ export const generateUserDocument = async (
   const ret = await getUserDocument(user.uid)
   return ret
 }
-const getUserDocument = async (
+export const getUserDocument = async (
   uid: string
 ): Promise<firebase.firestore.DocumentData> => {
   if (!uid) return null
