@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { UserContext } from "../../providers/UserProvider"
+import { LoadingSpinner } from "../../components/LoadingSpinner"
 
 const Portal = () => {
   const { signOut, user } = useContext(UserContext)
@@ -9,27 +10,30 @@ const Portal = () => {
   }
 
   if (!user) {
-    return <p>Loading</p>
+    return (
+      <div className="portal__signin__loading__wrapper">
+        <LoadingSpinner />
+      </div>
+    )
   }
 
   return (
-    <div>
+    <div className="portal__wrapper">
       <div>
-        <div
-          style={{
-            background: `url(${user.photoURL ||
-              "https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png)  no-repeat center center"}`,
-            backgroundSize: "cover",
-            height: "200px",
-            width: "200px",
-          }}
-        ></div>
-        <div>
-          <h2>{user.displayName}</h2>
-          <h3>{user.email}</h3>
+        <div className="portal__homepage__user__profile__header">
+          <div className="portal__profile__img__wrapper">
+            <img
+              className="portal__homepage__user__profile__picture"
+              src={`${user.photoURL ||
+                "https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png"}  `}
+            />
+          </div>
+          <h1>{user.displayName}</h1>
         </div>
       </div>
-      <button onClick={() => handleSignOut()}>Sign out</button>
+      <button onClick={() => handleSignOut()} className="site__button">
+        SIGN OUT
+      </button>
     </div>
   )
 }

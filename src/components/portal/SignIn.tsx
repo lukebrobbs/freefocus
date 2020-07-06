@@ -15,7 +15,7 @@ export const SignIn: FunctionComponent = () => {
         navigate("/portal")
       })
       .catch(error => {
-        setError("Error signing in with password and email!")
+        setError("Invalid email or password")
         console.error("Error signing in with password and email", error)
       })
   }
@@ -31,39 +31,42 @@ export const SignIn: FunctionComponent = () => {
   }
 
   return (
-    <div>
-      <h1>Sign In</h1>
-      <div>
-        {error !== null && <div>{error}</div>}
-        <form>
-          <label htmlFor="userEmail">Email:</label>
-          <input
-            type="email"
-            name="userEmail"
-            value={email}
-            placeholder="E.g: faruq123@gmail.com"
-            id="userEmail"
-            onChange={event => onChangeHandler(event)}
-          />
-          <label htmlFor="userPassword">Password:</label>
-          <input
-            type="password"
-            name="userPassword"
-            value={password}
-            placeholder="Your Password"
-            id="userPassword"
-            onChange={event => onChangeHandler(event)}
-          />
-          <button
-            onClick={event => {
-              signInWithEmailAndPasswordHandler(event, email, password)
-            }}
-          >
-            Sign in
-          </button>
-        </form>
+    <div className="portal__wrapper">
+      <div className="portal__signin__wrapper">
+        <h1>Free Focus Portal</h1>
+        <div>
+          {error !== null && <div>{error}</div>}
+          <form>
+            <label htmlFor="userEmail">Email:</label>
+            <input
+              type="email"
+              name="userEmail"
+              value={email}
+              className="name__input"
+              id="userEmail"
+              onChange={event => onChangeHandler(event)}
+            />
+            <label htmlFor="userPassword">Password:</label>
+            <input
+              type="password"
+              name="userPassword"
+              value={password}
+              className="name__input"
+              id="userPassword"
+              onChange={event => onChangeHandler(event)}
+            />
+            <button
+              onClick={event => {
+                signInWithEmailAndPasswordHandler(event, email, password)
+              }}
+              style={{ alignSelf: "flex-start" }}
+              className="site__button"
+            >
+              SIGN IN
+            </button>
+          </form>
 
-        {/* <p className="text-center my-3">
+          {/* <p className="text-center my-3">
           Don't have an account?{" "}
           <Link to="signUp" className="text-blue-500 hover:text-blue-600">
             Sign up here
@@ -76,6 +79,7 @@ export const SignIn: FunctionComponent = () => {
             Forgot Password?
           </Link>
         </p> */}
+        </div>
       </div>
     </div>
   )
