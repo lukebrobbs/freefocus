@@ -25,7 +25,7 @@ const Portal = () => {
             <img
               className="portal__homepage__user__profile__picture"
               src={`${user.photoURL ||
-                "https://res.cloudinary.com/dqcsk8rsc/image/upload/v1577268053/avatar-1-bitmoji_upgwhc.png"}  `}
+                "https://res.cloudinary.com/dz4zcbe69/image/upload/v1594059729/FreeFocus/freefocus-favicon.png"}  `}
             />
           </div>
           <h1>{user.displayName}</h1>
