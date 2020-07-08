@@ -981,6 +981,7 @@ p {
 }
 
 .contact__address {
+  font-style: normal;
   margin-top: 0.5em;
 }
 
@@ -1065,7 +1066,7 @@ p {
   }
 
   .header__listItem {
-    margin: 0.2rem;
+    margin: 0.5rem;
     display: inline;
     text-transform: uppercase;
     font-size: 1.2em;

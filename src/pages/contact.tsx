@@ -19,11 +19,12 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
             <div className="contact__image">
               <Img fluid={data.contentfulAsset.fluid} alt="Free focus Logo" />
             </div>
-            <div className="contact__address">
-              <p>4TH FLOOR</p>
-              <p>100 GRAYS INN ROAD</p>
+            <address className="contact__address">
+              <p>FIRST FLOOR</p>
+              <p>17-19 FOLEY STREET</p>
+              <p>FITZROVIA</p>
               <p>LONDON</p>
-              <p>WC1X 8AL</p>
+              <p>W1W 6DW</p>
               <p>
                 <a
                   className="footer__email"
@@ -33,7 +34,7 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
                   INFO@FREEFOCUS.CO.UK
                 </a>
               </p>
-            </div>
+            </address>
             <div className="contact__map__wrapper">
               <Map />
             </div>
