@@ -1,13 +1,29 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { UserContext } from "../../providers/UserProvider"
 import { LoadingSpinner } from "../../components/LoadingSpinner"
 import { navigate } from "gatsby"
 
 const Portal = () => {
   const { signOut, user, loading } = useContext(UserContext)
+  const [url, setUrl] = useState("")
 
   const handleSignOut = () => {
     signOut()
+  }
+
+  const handleGenerateLink = async () => {
+    const headers = new Headers({
+      "content-Type": "application/json",
+    })
+    const response = await fetch(
+      `${process.env.GATSBY_SOCIAL_API_URL}/url/create`,
+      {
+        method: "GET",
+        headers,
+      }
+    )
+    const data = await response.json()
+    setUrl(data.url)
   }
 
   if (loading) {
@@ -35,6 +51,12 @@ const Portal = () => {
           </div>
           <h1>{user.displayName}</h1>
         </div>
+      </div>
+      <div>
+        <button className="site__button" onClick={handleGenerateLink}>
+          Generate Link
+        </button>
+        <p>{url}</p>
       </div>
       <button onClick={() => handleSignOut()} className="site__button">
         SIGN OUT

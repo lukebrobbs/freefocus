@@ -3,7 +3,10 @@ import { navigate } from "gatsby"
 import { LoadingSpinner } from "../LoadingSpinner"
 import { UserContext } from "../../providers/UserProvider"
 
-export const SignUp: FunctionComponent = () => {
+interface SignUpProps {
+  role: string
+}
+export const SignUp: FunctionComponent<SignUpProps> = () => {
   const { user, loading, signUp, error } = useContext(UserContext)
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
