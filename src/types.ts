@@ -1,82 +1,82 @@
-import { FluidObject } from "gatsby-image";
-import { Document } from "@contentful/rich-text-types";
+import { FluidObject } from "gatsby-image"
+import { Document } from "@contentful/rich-text-types"
 
 export interface ISEOProps {
-  description?: string;
-  lang?: string;
+  description?: string
+  lang?: string
   meta?: ConcatArray<
     | { name: string; content: string; property?: undefined }
     | { property: string; content: string; name?: undefined }
-  >;
-  title?: string;
+  >
+  title?: string
 }
 
 export interface ISiteMetaQuery {
   site: {
     siteMetadata: {
-      title: string;
-      description: string;
-      author: string;
-    };
-  };
+      title: string
+      description: string
+      author: string
+    }
+  }
 }
 
 interface IAllContentfulNode {
   node: {
     description: {
-      json: Document;
-    };
-    contactEmail: string;
+      json: Document
+    }
+    contactEmail: string
     image: {
-      fluid: FluidObject;
-    };
-    name: string;
-    id: string;
-    twitterUsername: string;
-    instagramUsername: string;
-    facebookUsername: string;
-    youtubeUsername: string;
-    tikTokUsername: string;
-    tier: number;
-    facebookFollowerCount: number;
-    tikTokFollowerCount: number;
-    instagramFollowerCount: number;
-  };
+      fluid: FluidObject
+    }
+    name: string
+    id: string
+    twitterUsername: string
+    instagramUsername: string
+    facebookUsername: string
+    youtubeUsername: string
+    tikTokUsername: string
+    tier: number
+    facebookFollowerCount: number
+    tikTokFollowerCount: number
+    instagramFollowerCount: number
+  }
 }
 
 export interface IAllContentfulTalent extends IAllContentfulNode {
-  defaultOpen: boolean;
+  defaultOpen: boolean
 }
 
 export interface ITalentModalProps extends IAllContentfulNode {
-  isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface IIndexPageProps {
   data: {
-    allContentfulTalent: { edges: IAllContentfulTalent[] };
-  };
-  location: Location;
-  path: string;
+    allContentfulTalent: { edges: IAllContentfulTalent[] }
+  }
+  location: Location
+  path: string
 }
 
 export interface IMainLogoQuery {
   contentfulAsset: {
-    fluid: FluidObject;
-  };
+    fluid: FluidObject
+  }
 }
 
 export interface ILayoutProps {
-  path: string;
+  path: string
 }
 
 export interface ISocialProps {
-  image: string;
-  followers: string | number;
-  alt: string;
-  loading: boolean;
-  to: string;
+  image: string
+  followers: string | number
+  alt: string
+  loading: boolean
+  to: string
 }
 
 type contactFormActionTypes =
@@ -85,40 +85,62 @@ type contactFormActionTypes =
   | "SET_SUBJECT"
   | "SET_MESSAGE"
   | "SET_LOADING"
-  | "SET_SUCCESS";
+  | "SET_SUCCESS"
 
 export interface IContactFormState {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-  loading: boolean;
-  success: boolean;
+  name: string
+  email: string
+  subject: string
+  message: string
+  loading: boolean
+  success: boolean
 }
 
 export interface IContactFormAction {
-  type: contactFormActionTypes;
-  value?: string;
-  loading?: boolean;
+  type: contactFormActionTypes
+  value?: string
+  loading?: boolean
 }
 
-export type ContactFormAction = IContactFormAction;
+export type ContactFormAction = IContactFormAction
 
 export interface IAboutPageData {
   allContentfulAbout: {
     edges: {
       node: {
-        description: { json: Document };
-        instagramUsername: string;
-        pageHeader: string;
-        twitterUsername: string;
-      };
-    }[];
-  };
+        description: { json: Document }
+        instagramUsername: string
+        pageHeader: string
+        twitterUsername: string
+      }
+    }[]
+  }
 }
 
 export interface ISocialData {
-  twitterFollowerCount?: number;
-  youTubeFollowerCount?: string;
-  instagramFollowerCount?: number;
+  twitterFollowerCount?: number
+  youTubeFollowerCount?: string
+  instagramFollowerCount?: number
+}
+
+export interface ContentfulArticle {
+  id: string
+  cardTitle: string
+  cardImage: { fluid: FluidObject }
+}
+
+export interface ContentfulHeadlineArticle {
+  title: string
+  articles: ContentfulArticle[]
+}
+
+export interface ContentfulArticleData {
+  allContentfulArticle: {
+    edges: {
+      node: ContentfulArticle
+    }[]
+  }
+  contentfulHeadlineArticles: {
+    articles: ContentfulHeadlineArticle
+  }
 }

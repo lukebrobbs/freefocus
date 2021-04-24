@@ -14,7 +14,6 @@ import { ILayoutProps } from "../types"
 const Layout: FunctionComponent<ILayoutProps> = ({ children, path }) => {
   return (
     <>
-      {/* <Header path={path} /> */}
       <Nav />
       <main className="max-w-6xl lg:px-8 mx-auto pt-6">{children}</main>
       <footer className="footer__wrapper">

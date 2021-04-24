@@ -1,9 +1,9 @@
-const React = require("react")
-const Modal = require("react-modal")
-const Layout = require("./src/components/layout").default
-require("./src/styles/global.css")
+import React from "react"
+import Modal from "react-modal"
+import Layout from "./src/components/layout"
+import "./src/styles/global.css"
 
-exports.wrapPageElement = ({ element, props }) => {
+export const wrapPageElement = ({ element, props }) => {
   Modal.setAppElement("#___gatsby")
   return <Layout {...props}>{element}</Layout>
 }
