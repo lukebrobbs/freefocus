@@ -4,18 +4,18 @@ import React, { FunctionComponent } from "react"
 import { useStaticQuery } from "gatsby"
 import { IMainLogoQuery } from "../types"
 
-export const MAIN_LOGO_QUERY = graphql`
-  query mainLogoQuery {
-    contentfulAsset(title: { eq: "Header-Logo" }) {
-      fluid {
-        ...GatsbyContentfulFluid
-      }
-    }
-  }
-`
+// export const MAIN_LOGO_QUERY = graphql`
+//   query mainLogoQuery {
+//     contentfulAsset(title: { eq: "Header-Logo" }) {
+//       fluid {
+//         ...GatsbyContentfulFluid
+//       }
+//     }
+//   }
+// `
 
 const Header: FunctionComponent<{ path: string }> = ({ path }) => {
-  const data = useStaticQuery<IMainLogoQuery>(MAIN_LOGO_QUERY)
+  // const data = useStaticQuery<IMainLogoQuery>(MAIN_LOGO_QUERY)
 
   const isActive = (linkRoute: string) => {
     return path === linkRoute ? "active" : ""
@@ -35,11 +35,11 @@ const Header: FunctionComponent<{ path: string }> = ({ path }) => {
             textDecoration: `none`,
           }}
         >
-          <Img
+          {/* <Img
             fluid={data.contentfulAsset.fluid}
             alt="Free focus Logo"
             className="header__logo"
-          />
+          /> */}
         </Link>
         <ul className="header__listItems">
           <li className="header__listItem">
@@ -49,15 +49,23 @@ const Header: FunctionComponent<{ path: string }> = ({ path }) => {
           </li>
           <li className="header__listItem">
             <Link
-              className={`header__link ${isActive("/contact/")}`}
-              to="/contact"
+              className={`header__link ${isActive("/highlights/")}`}
+              to="/highlights"
             >
-              Contact
+              Highlights
             </Link>
           </li>
           <li className="header__listItem">
             <Link className={`header__link ${isActive("/about/")}`} to="/about">
               About
+            </Link>
+          </li>
+          <li className="header__listItem">
+            <Link
+              className={`header__link ${isActive("/contact/")}`}
+              to="/contact"
+            >
+              Contact
             </Link>
           </li>
         </ul>

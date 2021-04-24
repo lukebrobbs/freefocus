@@ -2,7 +2,6 @@ import React, { FunctionComponent, useState } from "react"
 import { IAllContentfulTalent } from "../types"
 import Img from "gatsby-image"
 import { TalentModal } from "./TalentModal"
-import { navigate } from "gatsby"
 
 export const Talent: FunctionComponent<IAllContentfulTalent> = ({
   node,
