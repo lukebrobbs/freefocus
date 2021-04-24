@@ -2,7 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import { IMainLogoQuery } from "../types"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { ContactForm } from "../components/ContactForm"
 import { Map } from "../components/Map"
 
@@ -18,7 +18,11 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
       <div className="contact__wrapper">
         <div className="contact__logo">
           <div className="contact__image">
-            <Img fluid={data.contentfulAsset.fluid} alt="Free focus Logo" />
+            <GatsbyImage
+              image={data.contentfulAsset.gatsbyImageData}
+              alt="Free focus Logo"
+              loading="eager"
+            />
           </div>
           <address className="contact__address">
             <p>FIRST FLOOR</p>
@@ -49,9 +53,7 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
 export const query = graphql`
   query contactQuery {
     contentfulAsset(title: { eq: "Header-Logo" }) {
-      fluid {
-        ...GatsbyContentfulFluid
-      }
+      gatsbyImageData
     }
   }
 `

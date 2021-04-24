@@ -1,5 +1,8 @@
-import { FixedObject, FluidObject } from "gatsby-image"
 import { Document } from "@contentful/rich-text-types"
+import {
+  ContentfulRichTextGatsbyReference,
+  RenderRichTextData,
+} from "gatsby-source-contentful/rich-text"
 
 export interface ISEOProps {
   description?: string
@@ -23,12 +26,11 @@ export interface ISiteMetaQuery {
 
 interface IAllContentfulNode {
   node: {
-    description: {
-      json: Document
-    }
+    description: RenderRichTextData<ContentfulRichTextGatsbyReference>
+
     contactEmail: string
     image: {
-      fluid: FluidObject
+      gatsbyImageData: any
     }
     name: string
     id: string
@@ -63,7 +65,7 @@ export interface IIndexPageProps {
 
 export interface IMainLogoQuery {
   contentfulAsset: {
-    fluid: FluidObject
+    gatsbyImageData: any
   }
 }
 
@@ -108,7 +110,7 @@ export interface IAboutPageData {
   allContentfulAbout: {
     edges: {
       node: {
-        description: { json: Document }
+        description: RenderRichTextData<ContentfulRichTextGatsbyReference>
         instagramUsername: string
         pageHeader: string
         twitterUsername: string
@@ -126,9 +128,9 @@ export interface ISocialData {
 export interface ContentfulArticle {
   id: string
   cardTitle: string
-  cardImage: { fluid: FluidObject }
-  headlineImage: { fluid: FluidObject }
-  image: { mobile: FixedObject; tablet: FixedObject }
+  cardImage: any
+  headlineImage: any
+  image: any
   articleTitle: string
   content: {
     json: Document

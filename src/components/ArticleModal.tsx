@@ -1,7 +1,8 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { FixedObject } from "gatsby-image"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+
 import React, { Fragment } from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+
 import { Dialog, Transition } from "@headlessui/react"
 
 interface ArticleModalProps {
@@ -9,7 +10,7 @@ interface ArticleModalProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
   title: string
   body: any
-  image: { mobile: FixedObject; tablet: FixedObject }
+  image: any
 }
 export const ArticleModal = ({
   isOpen,
@@ -18,14 +19,6 @@ export const ArticleModal = ({
   title,
   image,
 }: ArticleModalProps) => {
-  const sources = [
-    image.mobile,
-    {
-      ...image.tablet,
-      media: `(min-width: 1025px)`,
-    },
-  ]
-
   return (
     <Transition show={isOpen} as={Fragment}>
       <Dialog
@@ -57,20 +50,20 @@ export const ArticleModal = ({
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <div className="relative shadow-3xl bg-white bg-opacity-90 rounded py-4 w-11/12 lg:w-3/4 2xl:w-1/2 mx-auto">
+            <div className="relative shadow-3xl bg-white bg-opacity-90 rounded py-4 w-11/12 md:w-3/4 2xl:w-1/2 mx-auto">
               <button
                 className="modal__close__button left-full -ml-8"
                 onClick={() => setIsOpen(false)}
               />
-              <div className="flex flex-col lg:flex-row">
+              <div className="flex flex-col lg:flex-row justify-between">
                 <div className="w-full px-6 pt-10 lg:pt-0 flex items-center justify-center">
-                  <Img fixed={sources} alt={title} />
+                  <GatsbyImage image={image.gatsbyImageData} alt={title} />
                 </div>
-                <div className="px-3 lg:pr-10 py-10">
+                <div className="px-6 lg:pr-10 py-10 w-full">
                   <Dialog.Title className="text-2xl font-bold mb-4">
                     {title}
                   </Dialog.Title>
-                  {documentToReactComponents(body.json)}
+                  {renderRichText(body)}
                 </div>
               </div>
             </div>

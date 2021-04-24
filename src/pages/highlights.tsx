@@ -13,21 +13,14 @@ export const ARTICLE_QUERY = graphql`
           id
           articleTitle
           image {
-            mobile: fixed(width: 200, height: 300) {
-              ...GatsbyContentfulFixed
-            }
-            tablet: fixed(width: 400, height: 600) {
-              ...GatsbyContentfulFixed
-            }
+            gatsbyImageData(layout: CONSTRAINED)
           }
           content {
-            json
+            raw
           }
           cardTitle
           cardImage {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED)
           }
         }
       }
@@ -39,14 +32,10 @@ export const ARTICLE_QUERY = graphql`
           id
           cardTitle
           cardImage {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
           headlineImage {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

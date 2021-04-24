@@ -13,6 +13,8 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -21,7 +23,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -4,14 +4,12 @@ import { Disclosure, Transition } from "@headlessui/react"
 import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { IMainLogoQuery } from "../types"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const MAIN_LOGO_QUERY = graphql`
   query mainLogoQuery {
     contentfulAsset(title: { eq: "Header-Logo" }) {
-      fluid {
-        ...GatsbyContentfulFluid
-      }
+      gatsbyImageData
     }
   }
 `
@@ -28,8 +26,8 @@ export default function Nav() {
               <div className="flex items-center">
                 <div className="flex-shrink-0">
                   <Link to="/">
-                    <Img
-                      fluid={data.contentfulAsset.fluid}
+                    <GatsbyImage
+                      image={data.contentfulAsset.gatsbyImageData}
                       alt="Free focus Logo"
                       className="block w-52"
                     />

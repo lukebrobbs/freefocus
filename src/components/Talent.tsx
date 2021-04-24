@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from "react"
 import { IAllContentfulTalent } from "../types"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { TalentModal } from "./TalentModal"
 
 export const Talent: FunctionComponent<IAllContentfulTalent> = ({
@@ -41,11 +41,13 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({
         aria-haspopup
         tabIndex={0}
       >
-        <Img
-          fluid={node.image.fluid}
+        <GatsbyImage
+          image={node.image.gatsbyImageData}
           alt={node.name}
           className="talent__image"
+          loading="eager"
         />
+
         <div className="talent__name__wrapper">
           <p className="talent__name">{node.name}</p>
         </div>

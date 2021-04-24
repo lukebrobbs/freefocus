@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from "react"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Modal from "react-modal"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Instagram from "../images/instagram.svg"
 import Youtube from "../images/youtube.svg"
 import Twitter from "../images/twitter.svg"
@@ -69,15 +69,15 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
       >
         <div className="talent__modal__content">
           <button className="modal__close__button" onClick={handleClick} />
-          <Img
-            fluid={node.image.fluid}
+          <GatsbyImage
+            image={node.image.gatsbyImageData}
             alt={node.name}
             className="talent__modal__image"
           />
           <div className="talent__description__wrapper">
             <h1 className="talent__name__header">{node.name}</h1>
             <div className="talent__description">
-              {documentToReactComponents(node.description.json)}
+              {renderRichText(node.description)}
             </div>
             <a
               className="talent__contact"

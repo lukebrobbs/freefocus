@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  useCallback,
-  useMemo,
-  useEffect,
-} from "react"
+import React, { FunctionComponent, useCallback, useMemo } from "react"
 
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
@@ -18,6 +13,7 @@ const IndexPage: FunctionComponent<IIndexPageProps> = props => {
   const talentParam = params.get("talent")
 
   const sortedArr = useCallback(
+    // @ts-expect-error type mismatch
     shuffle(props.data.allContentfulTalent.edges).sort((a, b) => {
       return a.node.tier - b.node.tier
     }),
@@ -55,13 +51,11 @@ export const query = graphql`
       edges {
         node {
           description {
-            json
+            raw
           }
           contactEmail
           image {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED)
           }
           name
           id

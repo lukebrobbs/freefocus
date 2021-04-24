@@ -1,5 +1,5 @@
 import React from "react"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
@@ -25,7 +25,7 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
       <div className="line" />
       <div className="about__wrapper">
         <div className="about__description__wrapper">
-          {documentToReactComponents(description.json)}
+          {renderRichText(description)}
         </div>
         <InstaFeed />
         <div className="about__social__wrapper">
@@ -79,7 +79,7 @@ export const query = graphql`
         node {
           pageHeader
           description {
-            json
+            raw
           }
           instagramUsername
           twitterUsername

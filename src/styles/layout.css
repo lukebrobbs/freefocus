@@ -1076,7 +1076,7 @@ p {
   .contact__header {
     text-align: center;
   }
-  .contact__logo .gatsby-image-wrapper {
+  .contact__logo {
     display: none;
   }
   .contact__address {
