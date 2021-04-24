@@ -1019,9 +1019,6 @@ p {
   .contact__map__wrapper {
     width: 90%;
   }
-  main {
-    padding: 0 1rem;
-  }
 
   .ReactModal__Overlay--after-open {
     background-color: rgba(255, 255, 255, 0.7);

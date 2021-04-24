@@ -96,31 +96,38 @@ export default function Nav() {
           >
             <Disclosure.Panel static className="lg:hidden bg-gray-50">
               <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
-                <Disclosure.Button className="uppercase px-3 py-2 text-sm font-medium text-left hover:bg-gray-100">
-                  <Link to="/" activeClassName="text-freefocus-blue font-bold">
+                <Disclosure.Button className="uppercase px-3 text-sm font-medium text-left hover:bg-gray-100">
+                  <Link
+                    to="/"
+                    activeClassName="text-freefocus-blue font-bold"
+                    className="inline-block w-full py-2"
+                  >
                     Talent
                   </Link>
                 </Disclosure.Button>
-                <Disclosure.Button className="uppercase px-3 py-2 text-sm font-medium text-left hover:bg-gray-100">
+                <Disclosure.Button className="uppercase px-3 text-sm font-medium text-left hover:bg-gray-100">
                   <Link
                     to="/highlights"
                     activeClassName="text-freefocus-blue font-bold"
+                    className="inline-block w-full py-2"
                   >
                     Highlights
                   </Link>
                 </Disclosure.Button>
-                <Disclosure.Button className="uppercase px-3 py-2 text-sm font-medium text-left hover:bg-gray-100">
+                <Disclosure.Button className="uppercase px-3 text-sm font-medium text-left hover:bg-gray-100">
                   <Link
                     to="/about"
                     activeClassName="text-freefocus-blue font-bold"
+                    className="inline-block w-full py-2"
                   >
                     About
                   </Link>
                 </Disclosure.Button>
-                <Disclosure.Button className="uppercase px-3 py-2 text-sm font-medium text-left hover:bg-gray-100">
+                <Disclosure.Button className="uppercase px-3 text-sm font-medium text-left hover:bg-gray-100">
                   <Link
                     to="/contact"
                     activeClassName="text-freefocus-blue font-bold"
+                    className="inline-block w-full py-2"
                   >
                     Contact
                   </Link>

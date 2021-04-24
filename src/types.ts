@@ -127,6 +127,7 @@ export interface ContentfulArticle {
   id: string
   cardTitle: string
   cardImage: { fluid: FluidObject }
+  headlineImage: { fluid: FluidObject }
 }
 
 export interface ContentfulHeadlineArticle {

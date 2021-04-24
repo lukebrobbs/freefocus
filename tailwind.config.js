@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "freefocus-blue": "#436274",
+        "freefocus-secondary": "#5fc5e3",
       },
     },
   },

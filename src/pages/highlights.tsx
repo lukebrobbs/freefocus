@@ -31,6 +31,11 @@ export const ARTICLE_QUERY = graphql`
               ...GatsbyContentfulFluid
             }
           }
+          headlineImage {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
@@ -45,7 +50,7 @@ const HighlightsPage = ({ data }: { data: ContentfulArticleData }) => {
       </h1>
       <div className="line mb-10" />
       <HeadlineArticles {...data.contentfulHeadlineArticles.articles} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-6 md:mx-0 mt-6">
         {data.allContentfulArticle.edges.map(({ node }) => (
           <Article {...node} key={node.id} />
         ))}
