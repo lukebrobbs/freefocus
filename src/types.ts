@@ -1,4 +1,4 @@
-import { FluidObject } from "gatsby-image"
+import { FixedObject, FluidObject } from "gatsby-image"
 import { Document } from "@contentful/rich-text-types"
 
 export interface ISEOProps {
@@ -128,6 +128,11 @@ export interface ContentfulArticle {
   cardTitle: string
   cardImage: { fluid: FluidObject }
   headlineImage: { fluid: FluidObject }
+  image: { mobile: FixedObject; tablet: FixedObject }
+  articleTitle: string
+  content: {
+    json: Document
+  }
 }
 
 export interface ContentfulHeadlineArticle {

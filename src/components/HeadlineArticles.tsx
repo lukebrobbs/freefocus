@@ -35,12 +35,12 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
           ]
           return (
             <SwiperSlide
-              key={article.id}
+              key={`headline-${article.id}`}
               className="bg-gray-800 relative rounded-sm"
             >
               <Img fluid={sources} alt={article.cardTitle} />
-              <div className="absolute w-full h-full top-0 bg-gray-800 bg-opacity-40  flex items-center">
-                <h2 className="text-white text-3xl font-bold px-6">
+              <div className="absolute w-full h-full top-0 bg-freefocus-blue bg-opacity-50  flex items-center">
+                <h2 className="text-white text-2xl xs:text-3xl font-bold px-6">
                   {article.cardTitle}
                 </h2>
               </div>

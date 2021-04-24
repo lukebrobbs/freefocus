@@ -7,6 +7,12 @@ module.exports = {
         "freefocus-blue": "#436274",
         "freefocus-secondary": "#5fc5e3",
       },
+      boxShadow: {
+        "3xl": "7px 5px 5px rgba(109, 109, 109, 0.3)",
+      },
+      width: {
+        modal: "80vw",
+      },
     },
   },
   variants: {
