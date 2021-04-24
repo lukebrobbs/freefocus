@@ -13,6 +13,9 @@ module.exports = {
       width: {
         modal: "80vw",
       },
+      scale: {
+        "102": "1.02",
+      },
     },
   },
   variants: {

@@ -27,7 +27,7 @@ export const Article = ({
         image={image}
       />
       <div
-        className="relative rounded-sm overflow-hidden"
+        className="transition-all duration-200 ease-in-out transform relative rounded-sm overflow-hidden hover:scale-102"
         onKeyPress={handleKeyPress}
         role="button"
         aria-haspopup
