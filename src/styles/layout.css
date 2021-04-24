@@ -629,45 +629,6 @@ pre tt:after {
   }
 }
 
-.header__wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 1.5em auto 1.5em auto;
-  max-width: var(--max-width);
-  position: relative;
-}
-
-.header__logo {
-  min-width: 30%;
-  max-width: 200px;
-  cursor: pointer;
-}
-
-.header__listItems {
-  align-self: center;
-  justify-self: end;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  float: right;
-}
-
-.header__listItem {
-  margin: 1rem;
-  display: inline;
-  text-transform: uppercase;
-  font-size: 0.9em;
-}
-
-.header__link {
-  text-decoration: none;
-  color: #436274;
-}
-.header__link:hover {
-  color: #436274;
-  font-weight: bold;
-}
-
 .active {
   color: #436274;
   font-weight: bold;
@@ -891,11 +852,6 @@ p {
   display: flex;
 }
 
-.contact__container {
-  margin: 4em auto 0 auto;
-  text-transform: uppercase;
-}
-
 .contact__logo {
   width: 100%;
 }
@@ -1015,10 +971,6 @@ p {
   height: 40vh;
 }
 
-.about__container {
-  margin: 4em auto 0 auto;
-}
-
 .about__wrapper {
   color: #314b53;
   display: grid;
@@ -1070,25 +1022,6 @@ p {
   main {
     padding: 0 1rem;
   }
-  .header__wrapper {
-    grid-template-columns: 1fr;
-    align-items: center;
-  }
-  .header__logo {
-    margin: auto;
-    width: 70%;
-  }
-  .header__listItems {
-    margin: 1em auto;
-    font-size: 0.8em;
-  }
-
-  .header__listItem {
-    margin: 0.5rem;
-    display: inline;
-    text-transform: uppercase;
-    font-size: 1.2em;
-  }
 
   .ReactModal__Overlay--after-open {
     background-color: rgba(255, 255, 255, 0.7);
@@ -1136,9 +1069,7 @@ p {
     left: auto;
     right: 0;
   }
-  .contact__container {
-    margin: 0 auto;
-  }
+
   .contact__wrapper {
     grid-template-columns: 1fr;
     grid-gap: 20px;
@@ -1162,10 +1093,7 @@ p {
   .footer__line {
     margin-top: 1em;
   }
-  .about__container {
-    width: 90vw;
-    margin: 1.5rem auto;
-  }
+
   .about__wrapper {
     grid-template-columns: 1fr;
   }
@@ -1181,9 +1109,7 @@ p {
   .follow__button {
     display: none;
   }
-  .about__header {
-    text-align: center;
-  }
+
   .about__social__wrapper {
     display: block;
     text-align: center;

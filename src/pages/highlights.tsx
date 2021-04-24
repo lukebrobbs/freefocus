@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const NotFoundPage = () => (
   <>
     <SEO title="Highlights" />
-    <h1 className="text-xl font-semibold mb-6 uppercase mt-6 text-center lg:text-left">
+    <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
       Highlights
     </h1>
     <div className="line mb-10" />

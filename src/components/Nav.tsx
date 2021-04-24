@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React, { Fragment } from "react"
-import { Disclosure, Menu, Transition } from "@headlessui/react"
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
+import { Disclosure, Transition } from "@headlessui/react"
+import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { IMainLogoQuery } from "../types"
 import Img from "gatsby-image"
@@ -36,7 +36,7 @@ export default function Nav() {
                   </Link>
                 </div>
               </div>
-              <div className="hidden sm:block sm:ml-6">
+              <div className="hidden lg:block lg:ml-6">
                 <div className="flex space-x-4">
                   <Link
                     className="nav__listItem inline-flex flex-col justify-between items-center transition-color uppercase px-3 py-2 text-sm font-medium hover:text-freefocus-blue hover:font-bold"
@@ -72,7 +72,7 @@ export default function Nav() {
                   </Link>
                 </div>
               </div>
-              <div className="-mr-2 flex sm:hidden">
+              <div className="-mr-2 flex lg:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -94,7 +94,7 @@ export default function Nav() {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Disclosure.Panel static className="sm:hidden bg-gray-50">
+            <Disclosure.Panel static className="lg:hidden bg-gray-50">
               <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
                 <Disclosure.Button className="uppercase px-3 py-2 text-sm font-medium text-left hover:bg-gray-100">
                   <Link to="/" activeClassName="text-freefocus-blue font-bold">
