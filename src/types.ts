@@ -132,9 +132,7 @@ export interface ContentfulArticle {
   headlineImage: any
   image: any
   articleTitle: string
-  content: {
-    json: Document
-  }
+  content: RenderRichTextData<ContentfulRichTextGatsbyReference>
 }
 
 export interface ContentfulHeadlineArticle {

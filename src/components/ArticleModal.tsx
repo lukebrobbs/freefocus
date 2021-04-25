@@ -1,4 +1,8 @@
-import { renderRichText } from "gatsby-source-contentful/rich-text"
+import {
+  ContentfulRichTextGatsbyReference,
+  renderRichText,
+  RenderRichTextData,
+} from "gatsby-source-contentful/rich-text"
 
 import React, { Fragment } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -9,7 +13,7 @@ interface ArticleModalProps {
   isOpen: boolean
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
   title: string
-  body: any
+  body: RenderRichTextData<ContentfulRichTextGatsbyReference>
   image: any
 }
 export const ArticleModal = ({
@@ -39,7 +43,7 @@ export const ArticleModal = ({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-30" />
+            <Dialog.Overlay className="fixed inset-0 bg-white bg-opacity-60" />
           </Transition.Child>
           <Transition.Child
             as={Fragment}

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import SwiperCore, { Pagination, A11y, Autoplay } from "swiper"
 import { GatsbyImage, withArtDirection, getImage } from "gatsby-plugin-image"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -7,12 +7,34 @@ import { ContentfulHeadlineArticle } from "../types"
 // Import Swiper styles
 import "swiper/swiper.scss"
 import "../styles/pagination.scss"
+import { ArticleModal } from "./ArticleModal"
+import {
+  ContentfulRichTextGatsbyReference,
+  RenderRichTextData,
+} from "gatsby-source-contentful/rich-text"
 
 SwiperCore.use([Pagination, A11y, Autoplay])
 
 export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const [currentArticle, setCurrentArticle] = useState<{
+    title: string
+    body: RenderRichTextData<ContentfulRichTextGatsbyReference>
+    image: any
+  }>({
+    title: articles[0].articleTitle,
+    body: articles[0].content,
+    image: articles[0].image,
+  })
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
+      setIsOpen(true)
+    }
+  }
   return (
     <div className="-mx-4 md:mx-0 rounded-sm">
+      <ArticleModal isOpen={isOpen} setIsOpen={setIsOpen} {...currentArticle} />
       <Swiper
         spaceBetween={10}
         slidesPerView={1}
@@ -22,8 +44,8 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
             "w-2 h-2 inline-block rounded-lg bg-gray-50 bg-opacity-60 mx-1",
           bulletActiveClass: "bg-freefocus-secondary bg-opacity-100",
         }}
-        autoplay={{ delay: 10000 }}
-        className="py-6 h-72 rounded-sm"
+        autoplay={{ delay: 5000 }}
+        className="transition-all duration-200 ease-in-out transform py-6 h-72 rounded-sm hover:scale-102"
       >
         {articles.map(article => {
           const images = withArtDirection(article.cardImage.gatsbyImageData, [
@@ -36,11 +58,23 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
           return (
             <SwiperSlide
               key={`headline-${article.id}`}
-              className="bg-gray-800 relative rounded-sm"
+              className="bg-gray-800 relative rounded-sm cursor-pointer"
+              onClick={() => {
+                setCurrentArticle({
+                  body: article.content,
+                  title: article.articleTitle,
+                  image: article.image,
+                })
+                setIsOpen(true)
+              }}
+              onKeyPress={handleKeyPress}
+              role="button"
+              aria-haspopup
+              tabIndex={0}
             >
               <GatsbyImage image={images} alt={article.cardTitle} />
               <div className="absolute w-full h-full top-0 bg-freefocus-blue bg-opacity-30  flex items-center">
-                <h2 className="text-white text-2xl xs:text-3xl font-bold px-6">
+                <h2 className="text-white text-2xl sm:text-3xl font-bold px-6">
                   {article.cardTitle}
                 </h2>
               </div>

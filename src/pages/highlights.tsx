@@ -30,12 +30,19 @@ export const ARTICLE_QUERY = graphql`
         title
         articles {
           id
+          articleTitle
           cardTitle
           cardImage {
             gatsbyImageData(layout: FULL_WIDTH)
           }
           headlineImage {
             gatsbyImageData(layout: FULL_WIDTH)
+          }
+          image {
+            gatsbyImageData(layout: CONSTRAINED)
+          }
+          content {
+            raw
           }
         }
       }
