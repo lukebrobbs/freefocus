@@ -24,7 +24,7 @@ const IndexPage: FunctionComponent<IIndexPageProps> = props => {
     <>
       <SEO title="Home" />
       <div>
-        <div className="index__talent__wrapper">
+        <div className="grid grid-cols-talent gap-5">
           {sortedArr.map(talent => {
             return (
               <Talent

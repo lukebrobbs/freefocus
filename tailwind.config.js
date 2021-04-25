@@ -16,6 +16,12 @@ module.exports = {
       scale: {
         "102": "1.02",
       },
+      gridTemplateColumns: {
+        talent: "repeat(auto-fit, minmax(200px, 1fr))",
+      },
+      fontSize: {
+        "2xs": ["0.6rem", "18px"],
+      },
     },
   },
   variants: {

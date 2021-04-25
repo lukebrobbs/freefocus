@@ -75,7 +75,9 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
             className="talent__modal__image"
           />
           <div className="talent__description__wrapper">
-            <h1 className="talent__name__header">{node.name}</h1>
+            <h1 className="uppercase text-freefocus-blue font-medium mt-2 mb-4 md:my-6 lg:mt-0 text-4xl text-center lg:text-left">
+              {node.name}
+            </h1>
             <div className="talent__description">
               {renderRichText(node.description)}
             </div>

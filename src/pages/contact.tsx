@@ -32,7 +32,7 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
             <p>W1W 6DW</p>
             <p>
               <a
-                className="footer__email"
+                className="text-freefocus-secondary cursor-pointer"
                 href="mailto: info@freefocus.co.uk"
                 target="_blank"
               >

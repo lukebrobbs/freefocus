@@ -16,7 +16,7 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({
   }
   return (
     <div
-      className="talent__wrapper"
+      className="transition-all duration-200 ease-in-out text-center transform relative hover:scale-102"
       id={node.name
         .toLowerCase()
         .replace(" ", "+")
@@ -24,7 +24,7 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({
     >
       <TalentModal node={node} isOpen={isOpen} setIsOpen={setIsopen} />
       <div
-        className="modal__opener"
+        className="cursor-pointer"
         onClick={() => {
           history.pushState(
             null,
@@ -44,12 +44,13 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({
         <GatsbyImage
           image={node.image.gatsbyImageData}
           alt={node.name}
-          className="talent__image"
           loading="eager"
         />
 
-        <div className="talent__name__wrapper">
-          <p className="talent__name">{node.name}</p>
+        <div className="absolute bottom-3 w-full bg-white bg-opacity-80">
+          <p className="uppercase text-lg sm:text-sm font-semibold">
+            {node.name}
+          </p>
         </div>
       </div>
     </div>

@@ -607,12 +607,6 @@ pre tt:after {
   }
 }
 
-.layout__wrapper {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 4rem;
-}
-
 .nav__listItem::after {
   content: attr(data-text);
   content: attr(data-text) / "";
@@ -627,48 +621,6 @@ pre tt:after {
   .nav__listItem::after {
     display: none;
   }
-}
-
-.active {
-  color: #436274;
-  font-weight: bold;
-}
-
-.index__talent__wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-  width: 100%;
-  margin: auto;
-}
-.modal__opener {
-  cursor: pointer;
-}
-
-.talent__wrapper {
-  position: relative;
-  text-align: center;
-  transition: transform 0.2s;
-}
-
-.talent__wrapper:hover {
-  transform: scale(1.02);
-}
-
-.talent__name__wrapper {
-  position: absolute;
-  bottom: 10px;
-  margin: 0 auto;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.795);
-}
-
-.talent__name {
-  text-transform: uppercase;
-  margin: 0;
-  opacity: 1;
-  font-size: 0.8em;
-  font-weight: 600;
 }
 
 .ReactModal__Overlay {
@@ -729,12 +681,6 @@ pre tt:after {
     "image desc desc desc"
     "image soc soc soc";
   line-height: 1.5;
-}
-
-.talent__name__header {
-  text-transform: uppercase;
-  color: #335869;
-  font-weight: 500;
 }
 
 .talent__description__wrapper {
@@ -813,33 +759,11 @@ p {
   grid-area: soc;
 }
 
-.footer__wrapper {
-  width: 50%;
-  margin: auto;
-  text-align: center;
-}
-
 .footer__line {
   height: 2px;
   background-color: #d1d9df;
   margin: 2em auto 0 auto;
   width: 100%;
-}
-
-.footer__address {
-  color: #436274;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.6em;
-  font-weight: 600;
-  margin: 1em auto 3em;
-  width: 90%;
-}
-
-.footer__email {
-  color: #5fc5e3;
-  cursor: pointer;
-  text-decoration: none;
 }
 
 .contact__wrapper {
@@ -1037,9 +961,7 @@ p {
       "desc"
       "soc";
   }
-  .talent__name__header {
-    text-align: center;
-  }
+
   .talent__description__wrapper {
     padding-left: 0;
   }
@@ -1115,12 +1037,6 @@ p {
   }
   .social__acount__text {
     margin-top: 0.5em;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .talent__name {
-    font-size: 1.2em;
   }
 }
 

@@ -11,24 +11,24 @@ import Nav from "./Nav"
 import "../styles/layout.css"
 import { ILayoutProps } from "../types"
 
-const Layout: FunctionComponent<ILayoutProps> = ({ children, path }) => {
+const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
   return (
     <>
       <Nav />
       <main className="max-w-6xl px-4 lg:px-8 mx-auto pt-6">{children}</main>
-      <footer className="footer__wrapper">
+      <footer className="w-1/2 mx-auto text-center">
         <div className="footer__line" />
-        <p className="footer__address">
+        <address className=" text-freefocus-blue uppercase tracking-widest text-2xs font-semibold mt-4 mx-auto mb-12">
           Free Focus, First Floor, 17-19 Foley Street, Fitzrovia, London, W1W
           6DW{" "}
           <a
-            className="footer__email"
+            className="text-freefocus-secondary cursor-pointer"
             href="mailto: info@freefocus.co.uk"
             target="_blank"
           >
             info@freefocus.co.uk
           </a>
-        </p>
+        </address>
       </footer>
     </>
   )
