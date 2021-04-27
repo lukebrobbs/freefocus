@@ -15,7 +15,7 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
   return (
     <>
       <Nav />
-      <main className="max-w-6xl px-4 lg:px-8 mx-auto pt-6">{children}</main>
+      <main className="px-4 lg:px-8 mx-auto pt-6">{children}</main>
       <footer className="w-1/2 mx-auto text-center">
         <div className="footer__line" />
         <address className=" text-freefocus-blue uppercase tracking-widest text-2xs font-semibold mt-4 mx-auto mb-12">

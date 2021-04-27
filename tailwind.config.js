@@ -15,8 +15,11 @@ module.exports = {
       width: {
         modal: "80vw",
       },
+      height: {
+        "half-screen": "45vh",
+      },
       scale: {
-        "102": "1.02",
+        102: "1.02",
       },
       gridTemplateColumns: {
         talent: "repeat(auto-fit, minmax(200px, 1fr))",
@@ -29,6 +32,8 @@ module.exports = {
   variants: {
     extend: {
       fontWeight: ["hover", "focus"],
+      backgroundColor: ["disabled"],
+      opacity: ["disabled"],
     },
   },
   plugins: [],

@@ -6,7 +6,7 @@ import { IIndexPageProps } from "../types"
 import { Talent } from "../components/Talent"
 import shuffle from "lodash.shuffle"
 
-const IndexPage: FunctionComponent<IIndexPageProps> = props => {
+const IndexPage: FunctionComponent<IIndexPageProps> = (props) => {
   const params = useMemo(() => new URLSearchParams(props.location.search), [
     props.location.search,
   ])
@@ -23,9 +23,9 @@ const IndexPage: FunctionComponent<IIndexPageProps> = props => {
   return (
     <>
       <SEO title="Home" />
-      <div>
+      <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-talent gap-5">
-          {sortedArr.map(talent => {
+          {sortedArr.map((talent) => {
             return (
               <Talent
                 {...talent}

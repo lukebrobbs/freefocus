@@ -16,7 +16,7 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
     instagramUsername,
   } = data.allContentfulAbout.edges[0].node
   return (
-    <>
+    <div className="max-w-4xl mx-auto">
       <SEO title="About" />
       <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
         {pageHeader}
@@ -54,7 +54,7 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
           </button>
         </form>
       </div>
-    </>
+    </div>
   )
 }
 

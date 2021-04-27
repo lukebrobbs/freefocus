@@ -5,7 +5,7 @@ export const InstaFeed = () => {
   useInstaFeed()
   return (
     <div>
-      <div id="pixlee_container" className="instafeed__wrapper" />
+      <div id="pixlee_container" className="h-half-screen overflow-auto" />
     </div>
   )
 }

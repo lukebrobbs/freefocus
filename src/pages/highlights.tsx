@@ -51,7 +51,7 @@ export const ARTICLE_QUERY = graphql`
 `
 const HighlightsPage = ({ data }: { data: ContentfulArticleData }) => {
   return (
-    <>
+    <div className="max-w-4xl mx-auto">
       <SEO title="Highlights" />
       <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
         Highlights
@@ -63,7 +63,7 @@ const HighlightsPage = ({ data }: { data: ContentfulArticleData }) => {
           <Article {...node} key={node.id} />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
