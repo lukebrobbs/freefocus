@@ -56,7 +56,7 @@ const HighlightsPage = ({ data }: { data: ContentfulArticleData }) => {
       <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
         Highlights
       </h1>
-      <div className="line mb-10" />
+      <div className="h-0.5 bg-freefocus-gray w-full mb-10" />
       <HeadlineArticles {...data.contentfulHeadlineArticles.articles} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 xs:mx-6 md:mx-0 mt-6">
         {data.allContentfulArticle.edges.map(({ node }) => (

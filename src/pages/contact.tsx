@@ -13,7 +13,7 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
       <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
         Contact us
       </h1>
-      <div className="line" />
+      <div className="h-0.5 bg-freefocus-gray w-full" />
 
       <div className="contact__wrapper">
         <div className="contact__logo">

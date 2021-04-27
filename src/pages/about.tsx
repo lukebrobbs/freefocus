@@ -21,49 +21,35 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
       <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
         {pageHeader}
       </h1>
-      <p className="about__header"></p>
-      <div className="line" />
-      <div className="about__wrapper">
-        <div className="about__description__wrapper">
+      <div className="h-0.5 bg-freefocus-gray w-full" />
+      <div className="text-freefocus-blue grid lg:grid-cols-2 gap-4 text-sm font-semibold py-6 lg:py-16">
+        <div className="w-full lg:w-3/4 text-sm tracking-normal">
           {renderRichText(description)}
         </div>
         <InstaFeed />
-        <div className="about__social__wrapper">
+        <div className="text-center pt-4 flex lg:justify-start h-10">
           <a
-            className="social__image"
+            className="mr-2 lg:mr-1"
             href={`https://www.instagram.com/${instagramUsername}`}
             target="_blank"
           >
-            <img
-              src={Instagram}
-              alt="Instagram Logo"
-              className="social__image"
-              style={{ marginRight: "2em" }}
-            />
+            <img src={Instagram} alt="Instagram Logo" className="h-full mr-8" />
           </a>
           <a
-            className="social__image"
+            className="mr-2 lg:mr-1"
             href={`https://www.twitter.com/${twitterUsername}`}
             target="_blank"
           >
-            <img
-              src={Twitter}
-              alt="Twitter Logo"
-              className="social__image"
-              style={{ marginRight: "2em" }}
-            />
+            <img src={Twitter} alt="Twitter Logo" className="h-full mr-8" />
           </a>
-          <p className="social__acount__text">{`@${twitterUsername}`}</p>
+          <p className="mt-2 lg:mt-0 self-center">{`@${twitterUsername}`}</p>
         </div>
         <form
           action={`https://www.instagram.com/${instagramUsername}`}
           target="_blank"
-          className="follow__button"
+          className="hidden lg:flex"
         >
-          <button
-            className="site__button follow__button"
-            style={{ margin: "auto" }}
-          >
+          <button className="transition-all duration-100 mx py-1 px-8 mt-2 bg-freefocus-tertiary text-white text-xs font-semibold cursor-pointer self-center hidden lg:flex mx-auto hover:bg-opacity-80">
             FOLLOW US
           </button>
         </form>

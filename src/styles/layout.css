@@ -896,36 +896,9 @@ p {
   height: 40vh;
 }
 
-.about__wrapper {
-  color: #314b53;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1em;
-  font-size: 0.9em;
-  font-weight: 600;
-  margin: 4em 0;
-}
-
-.about__description__wrapper {
-  letter-spacing: 0;
-  font-size: 0.9em;
-  width: 75%;
-}
-
-.about__social__wrapper {
-  display: flex;
-  justify-content: flex-start;
-  height: 40px;
-}
-
 .instafeed__wrapper {
   height: 50vh;
   overflow: hidden;
-}
-
-.social__acount__text {
-  align-self: center;
-  margin: 0;
 }
 
 .contact__map__wrapper {
@@ -1014,29 +987,12 @@ p {
     margin-top: 1em;
   }
 
-  .about__wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .about__description__wrapper {
-    width: 100%;
-    line-height: 1.1;
-  }
   .instafeed__wrapper {
     height: 530px;
     /* overflow: in; */
   }
   .follow__button {
     display: none;
-  }
-
-  .about__social__wrapper {
-    display: block;
-    text-align: center;
-    margin-top: 1em;
-  }
-  .social__acount__text {
-    margin-top: 0.5em;
   }
 }
 
@@ -1106,12 +1062,4 @@ p {
   100% {
     transform: translate(19px, 0);
   }
-}
-
-/* utils  */
-
-.line {
-  height: 2px;
-  background-color: #d1d9df;
-  width: 100%;
 }
