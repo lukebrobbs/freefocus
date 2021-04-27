@@ -22,8 +22,8 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
         {pageHeader}
       </h1>
       <div className="h-0.5 bg-freefocus-gray w-full" />
-      <div className="text-freefocus-blue grid lg:grid-cols-2 gap-4 text-sm font-semibold py-6 lg:py-16">
-        <div className="w-full lg:w-3/4 text-sm tracking-normal">
+      <div className="text-freefocus-blue grid lg:grid-cols-2 gap-4 text-sm font-medium py-6 lg:py-16">
+        <div className="w-full lg:w-3/4 text-xs lg:text-sm lg:leading-relaxed tracking-normal">
           {renderRichText(description)}
         </div>
         <InstaFeed />
