@@ -37,7 +37,7 @@ export const Article = ({
       >
         <GatsbyImage image={cardImage.gatsbyImageData} alt={cardTitle} />
         <div className="w-full h-full absolute top-0 bg-gray-700 bg-opacity-50 flex items-end justify-center">
-          <h3 className="text-white p-3 uppercase sm:text-sm font-semibold">
+          <h3 className=" p-3 uppercase sm:text-sm font-semibold text-white w-full">
             {cardTitle}
           </h3>
         </div>

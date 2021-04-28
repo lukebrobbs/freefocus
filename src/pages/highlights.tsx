@@ -36,7 +36,7 @@ export const ARTICLE_QUERY = graphql`
             gatsbyImageData(layout: FULL_WIDTH)
           }
           headlineImage {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: CONSTRAINED)
           }
           image {
             gatsbyImageData(layout: CONSTRAINED)

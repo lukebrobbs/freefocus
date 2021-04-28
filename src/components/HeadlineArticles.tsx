@@ -67,9 +67,13 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
               aria-haspopup
               tabIndex={0}
             >
-              <GatsbyImage image={images} alt={article.cardTitle} />
-              <div className="absolute w-full h-full top-0 bg-gray-700 bg-opacity-50 flex items-end">
-                <h2 className="uppercase text-white md:text-lg font-semibold p-3">
+              <GatsbyImage
+                image={images}
+                alt={article.cardTitle}
+                className="w-full h-full"
+              />
+              <div className="absolute w-full h-full top-0 flex items-end">
+                <h2 className="uppercase md:text-lg font-semibold p-3 bg-white bg-opacity-80 w-full mb-3">
                   {article.cardTitle}
                 </h2>
               </div>
