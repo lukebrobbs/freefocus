@@ -25,6 +25,7 @@ const IndexPage: FunctionComponent<IIndexPageProps> = (props) => {
       <SEO title="Home" />
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-talent gap-5">
+          {/*@ts-expect-error*/}
           {sortedArr.map((talent) => {
             return (
               <Talent
