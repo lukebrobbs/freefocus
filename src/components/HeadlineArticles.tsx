@@ -74,8 +74,8 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
               tabIndex={0}
             >
               <GatsbyImage image={images} alt={article.cardTitle} />
-              <div className="absolute w-full h-full top-0 bg-freefocus-blue bg-opacity-30  flex items-center">
-                <h2 className="text-white text-2xl sm:text-3xl font-bold px-6">
+              <div className="absolute w-full h-full top-0 bg-gray-700 bg-opacity-50 flex items-end">
+                <h2 className="uppercase text-white text-2xl  font-semibold px-6 pb-10">
                   {article.cardTitle}
                 </h2>
               </div>

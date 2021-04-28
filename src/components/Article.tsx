@@ -36,8 +36,8 @@ export const Article = ({
         onClick={() => setIsOpen(true)}
       >
         <GatsbyImage image={cardImage.gatsbyImageData} alt={cardTitle} />
-        <div className="w-full h-full absolute top-0 bg-freefocus-blue bg-opacity-30 flex items-center justify-center">
-          <h3 className="text-white font-bold text-xl xs:text-3xl px-6">
+        <div className="w-full h-full absolute top-0 bg-gray-700 bg-opacity-50 flex items-end justify-center">
+          <h3 className="text-white p-3 uppercase sm:text-sm font-semibold">
             {cardTitle}
           </h3>
         </div>
