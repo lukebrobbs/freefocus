@@ -63,7 +63,7 @@ export const ArticleModal = ({
                 <div className="w-full px-6 pt-10 lg:pt-0 flex items-center justify-center">
                   <GatsbyImage image={image.gatsbyImageData} alt={title} />
                 </div>
-                <div className="px-6 lg:pr-10 py-10 w-full">
+                <div className="px-6 lg:pr-10 pb-10 pt-6 lg:pt-4 w-full">
                   <Dialog.Title className="text-2xl font-bold mb-4">
                     {title}
                   </Dialog.Title>
