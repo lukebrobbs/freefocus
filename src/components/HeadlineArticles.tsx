@@ -38,6 +38,7 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
       <Swiper
         spaceBetween={10}
         slidesPerView={1}
+        speed={800}
         pagination={{
           clickable: true,
           bulletClass:
@@ -47,7 +48,7 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
         autoplay={{ delay: 5000 }}
         className="transition-all duration-200 ease-in-out transform py-6 h-72 rounded-sm hover:scale-102"
       >
-        {articles.map(article => {
+        {articles.map((article) => {
           const images = withArtDirection(article.cardImage.gatsbyImageData, [
             {
               media: `(min-width: 768px)`,
