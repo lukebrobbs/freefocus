@@ -1,6 +1,5 @@
-import React, { FunctionComponent, useEffect, useState } from "react"
+import React, { Fragment, FunctionComponent, useEffect, useState } from "react"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import Modal from "react-modal"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Instagram from "../images/instagram.svg"
 import Youtube from "../images/youtube.svg"
@@ -11,6 +10,7 @@ import Contact from "../images/contact.png"
 import Blog from "../images/blog.svg"
 import { Social } from "./Social"
 import { ITalentModalProps, ISocialData } from "../types"
+import { Transition, Dialog } from "@headlessui/react"
 
 export const TalentModal: FunctionComponent<ITalentModalProps> = ({
   node,
@@ -60,105 +60,139 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
 
   return (
     <>
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={handleClick}
-        contentLabel="Talent Modal"
-        closeTimeoutMS={200}
-        className="talent__modal"
-        overlayClassName="talent__overlay__modal"
-      >
-        <div className="talent__modal__content">
-          <button className="modal__close__button" onClick={handleClick} />
-          <GatsbyImage
-            image={node.image.gatsbyImageData}
-            alt={node.name}
-            className="talent__modal__image"
-          />
-          <div className="talent__description__wrapper">
-            <h1 className="uppercase text-freefocus-blue font-medium mt-2 mb-4 md:my-6 lg:mt-0 text-4xl text-center lg:text-left">
-              {node.name}
-            </h1>
-            <div className="talent__description">
-              {renderRichText(node.description)}
-            </div>
-            <a
-              className="talent__contact"
-              href={`mailto: ${node.contactEmail}?subject=${node.name}`}
-              target="_blank"
+      <Transition show={isOpen} as={Fragment}>
+        <Dialog
+          open={isOpen}
+          static
+          onClose={() => {
+            setIsOpen(false)
+          }}
+          className="fixed z-10 inset-0 overflow-y-auto"
+        >
+          <div className="flex items-center justify-center min-h-screen">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
             >
-              <img src={Contact} alt="contact us" />
-              <p style={{ alignSelf: "center", marginLeft: "10px" }}>CONTACT</p>
-            </a>
+              <Dialog.Overlay className="fixed inset-0 bg-white bg-opacity-70" />
+            </Transition.Child>
+            <Transition.Child
+              as={Fragment}
+              enter="transition duration-100 ease-out"
+              enterFrom="transform scale-95 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-75 ease-out"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-95 opacity-0"
+            >
+              <div className="p-4 pb-8 lg:pb-4 relative text-sm font-semibold flex flex-col lg:flex-row shadow-3xl bg-white bg-opacity-50 max-w-5xl rounded mx-2 md:mx-20 md:overflow-y-scroll lg:overflow-y-auto">
+                <button
+                  className="modal__close__button left-full -ml-8 top-3"
+                  onClick={handleClick}
+                />
+                <GatsbyImage
+                  image={node.image.gatsbyImageData}
+                  alt={node.name}
+                  className="w-48 h-48 mx-auto lg:w-96 lg:h-96 flex-shrink lg:mr-6"
+                />
+                <div className="flex flex-col flex-1">
+                  <h1 className="uppercase text-freefocus-blue font-medium mt-2 mb-4 lg:my-6 lg:mt-0 text-3xl lg:text-4xl text-center lg:text-left">
+                    {node.name}
+                  </h1>
+                  <div className="leading-snug text-sm lg:w-3/4 tracking-normal">
+                    {renderRichText(node.description)}
+                  </div>
+                  <a
+                    className="cursor-pointer py-4 inline-flex items-center"
+                    href={`mailto: ${node.contactEmail}?subject=${node.name}`}
+                    target="_blank"
+                  >
+                    <img
+                      src={Contact}
+                      alt="contact us"
+                      className="m-0 w-7 h-7"
+                    />
+                    <p className="ml-2">CONTACT</p>
+                  </a>
+                  <div className="flex mt-auto justify-between w-min mx-auto lg:mx-0">
+                    {node.instagramFollowerCount && (
+                      <Social
+                        image={Instagram}
+                        alt="Instagram logo"
+                        followers={
+                          node.instagramFollowerCount
+                            ? node.instagramFollowerCount
+                            : ""
+                        }
+                        loading={loading}
+                        to={`https://www.instagram.com/${node.instagramUsername}`}
+                      />
+                    )}
+                    {node.youtubeUsername && (
+                      <Social
+                        image={Youtube}
+                        alt="Youtube logo"
+                        followers={
+                          socialData.youTubeFollowerCount
+                            ? socialData.youTubeFollowerCount
+                            : ""
+                        }
+                        loading={loading}
+                        to={`https://www.youtube.com/channel/${node.youtubeUsername}`}
+                      />
+                    )}
+                    {node.twitterUsername && (
+                      <Social
+                        image={Twitter}
+                        alt="Twitter logo"
+                        followers={
+                          socialData.twitterFollowerCount
+                            ? socialData.twitterFollowerCount
+                            : ""
+                        }
+                        loading={loading}
+                        to={`https://twitter.com/${node.twitterUsername}`}
+                      />
+                    )}
+                    {node.facebookUsername && (
+                      <Social
+                        image={Facebook}
+                        alt="Facebook logo"
+                        followers={node.facebookFollowerCount}
+                        loading={loading}
+                        to={`https://www.facebook.com/${node.facebookUsername}`}
+                      />
+                    )}
+                    {node.tikTokFollowerCount && (
+                      <Social
+                        image={TikTok}
+                        alt="TikTok logo"
+                        followers={node.tikTokFollowerCount}
+                        loading={loading}
+                        to={`https://www.tiktok.com/@${node.tikTokUsername}`}
+                      />
+                    )}
+                    {node.blogPostLink && (
+                      <Social
+                        image={Blog}
+                        alt="Blog post"
+                        followers="blog"
+                        loading={loading}
+                        to={node.blogPostLink}
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Transition.Child>
           </div>
-          <div className="social__wrapper">
-            {node.instagramFollowerCount && (
-              <Social
-                image={Instagram}
-                alt="Instagram logo"
-                followers={
-                  node.instagramFollowerCount ? node.instagramFollowerCount : ""
-                }
-                loading={loading}
-                to={`https://www.instagram.com/${node.instagramUsername}`}
-              />
-            )}
-            {node.youtubeUsername && (
-              <Social
-                image={Youtube}
-                alt="Youtube logo"
-                followers={
-                  socialData.youTubeFollowerCount
-                    ? socialData.youTubeFollowerCount
-                    : ""
-                }
-                loading={loading}
-                to={`https://www.youtube.com/channel/${node.youtubeUsername}`}
-              />
-            )}
-            {node.twitterUsername && (
-              <Social
-                image={Twitter}
-                alt="Twitter logo"
-                followers={
-                  socialData.twitterFollowerCount
-                    ? socialData.twitterFollowerCount
-                    : ""
-                }
-                loading={loading}
-                to={`https://twitter.com/${node.twitterUsername}`}
-              />
-            )}
-            {node.facebookUsername && (
-              <Social
-                image={Facebook}
-                alt="Facebook logo"
-                followers={node.facebookFollowerCount}
-                loading={loading}
-                to={`https://www.facebook.com/${node.facebookUsername}`}
-              />
-            )}
-            {node.tikTokFollowerCount && (
-              <Social
-                image={TikTok}
-                alt="TikTok logo"
-                followers={node.tikTokFollowerCount}
-                loading={loading}
-                to={`https://www.tiktok.com/@${node.tikTokUsername}`}
-              />
-            )}
-            {node.blogPostLink && (
-              <Social
-                image={Blog}
-                alt="Blog post"
-                followers="blog"
-                loading={loading}
-                to={node.blogPostLink}
-              />
-            )}
-          </div>
-        </div>
-      </Modal>
+        </Dialog>
+      </Transition>
     </>
   )
 }

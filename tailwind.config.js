@@ -7,6 +7,7 @@ module.exports = {
         "freefocus-blue": "#436274",
         "freefocus-secondary": "#5fc5e3",
         "freefocus-gray": "#d1d9df",
+        "freefocus-body-color": "rgb(113, 113, 113)",
         "freefocus-tertiary": "rgb(86, 86, 86)",
       },
       boxShadow: {
@@ -25,7 +26,11 @@ module.exports = {
         talent: "repeat(auto-fit, minmax(200px, 1fr))",
       },
       fontSize: {
+        sm: "0.8rem",
         "2xs": ["0.6rem", "18px"],
+      },
+      letterSpacing: {
+        "x-wide": "0.2rem",
       },
     },
   },

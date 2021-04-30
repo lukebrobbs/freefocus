@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    @apply tracking-x-wide;
+  }
+  body {
+    @apply text-freefocus-body-color;
+  }
+}

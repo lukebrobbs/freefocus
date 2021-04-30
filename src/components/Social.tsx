@@ -5,11 +5,11 @@ import { LoadingSpinner } from "./LoadingSpinner"
 
 export const Social: FunctionComponent<ISocialProps> = (props) => {
   return (
-    <div className="social__image__wrapper">
-      <a href={props.to} target="_blank" className="social__image">
-        <img src={props.image} alt={props.alt} className="social__image" />
+    <div className="text-center flex flex-col h-8 lg:flex-row lg:flex-shrink-0 lg:m-1 pr-4">
+      <a href={props.to} target="_blank" className="h-8 w-8 lg:mr-2 mx-auto">
+        <img src={props.image} alt={props.alt} className="h-full mr-1" />
       </a>
-      <div className="social__image__count">
+      <div className="uppercase tracking-normal self-center pt-1">
         {props.loading ? (
           <div style={{ position: "relative" }}>
             <LoadingSpinner />
