@@ -3,7 +3,7 @@ import numeral from "numeral"
 import { ISocialProps } from "../types"
 import { LoadingSpinner } from "./LoadingSpinner"
 
-export const Social: FunctionComponent<ISocialProps> = props => {
+export const Social: FunctionComponent<ISocialProps> = (props) => {
   return (
     <div className="social__image__wrapper">
       <a href={props.to} target="_blank" className="social__image">
@@ -17,6 +17,8 @@ export const Social: FunctionComponent<ISocialProps> = props => {
         ) : props.followers ? (
           +props.followers > 1000 ? (
             numeral(+props.followers).format("0.0a")
+          ) : Number.isNaN(+props.followers) ? (
+            props.followers
           ) : (
             +props.followers
           )

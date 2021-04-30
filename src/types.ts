@@ -43,6 +43,7 @@ interface IAllContentfulNode {
     facebookFollowerCount: number
     tikTokFollowerCount: number
     instagramFollowerCount: number
+    blogPostLink: string
   }
 }
 
@@ -75,7 +76,7 @@ export interface ILayoutProps {
 
 export interface ISocialProps {
   image: string
-  followers: string | number
+  followers?: string | number
   alt: string
   loading: boolean
   to: string

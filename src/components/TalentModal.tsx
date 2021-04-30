@@ -8,6 +8,7 @@ import Twitter from "../images/twitter.svg"
 import Facebook from "../images/facebook.svg"
 import TikTok from "../images/tikTok.svg"
 import Contact from "../images/contact.png"
+import Blog from "../images/blog.svg"
 import { Social } from "./Social"
 import { ITalentModalProps, ISocialData } from "../types"
 
@@ -144,6 +145,15 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
                 followers={node.tikTokFollowerCount}
                 loading={loading}
                 to={`https://www.tiktok.com/@${node.tikTokUsername}`}
+              />
+            )}
+            {node.blogPostLink && (
+              <Social
+                image={Blog}
+                alt="Blog post"
+                followers="blog"
+                loading={loading}
+                to={node.blogPostLink}
               />
             )}
           </div>

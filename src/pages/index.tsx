@@ -13,7 +13,6 @@ const IndexPage: FunctionComponent<IIndexPageProps> = (props) => {
   const talentParam = params.get("talent")
 
   const sortedArr = useCallback(
-    // @ts-expect-error type mismatch
     shuffle(props.data.allContentfulTalent.edges).sort((a, b) => {
       return a.node.tier - b.node.tier
     }),
@@ -25,7 +24,6 @@ const IndexPage: FunctionComponent<IIndexPageProps> = (props) => {
       <SEO title="Home" />
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-talent gap-5">
-          {/*@ts-expect-error*/}
           {sortedArr.map((talent) => {
             return (
               <Talent
@@ -70,6 +68,7 @@ export const query = graphql`
           facebookFollowerCount
           tikTokFollowerCount
           instagramFollowerCount
+          blogPostLink
         }
       }
     }
