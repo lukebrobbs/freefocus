@@ -1,19 +1,19 @@
 import React, { useState } from "react"
-import SwiperCore, { A11y, Autoplay } from "swiper"
+import SwiperCore, { A11y, Autoplay, Navigation } from "swiper"
 import { GatsbyImage, withArtDirection } from "gatsby-plugin-image"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { ContentfulHeadlineArticle } from "../types"
 
 // Import Swiper styles
-import "swiper/swiper.scss"
-import "../styles/pagination.scss"
+import "swiper/swiper.min.css"
+import "../styles/navigation.css"
 import { ArticleModal } from "./ArticleModal"
 import {
   ContentfulRichTextGatsbyReference,
   RenderRichTextData,
 } from "gatsby-source-contentful/rich-text"
 
-SwiperCore.use([A11y, Autoplay])
+SwiperCore.use([Navigation, A11y, Autoplay])
 
 export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -39,6 +39,8 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
         spaceBetween={10}
         slidesPerView={1}
         speed={800}
+        navigation
+        loop
         autoplay={{ delay: 5000 }}
         className="transition-all duration-200 ease-in-out transform py-6 h-72 rounded-sm hover:scale-102"
       >
@@ -73,7 +75,7 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
                 className="w-full h-full"
               />
               <div className="absolute w-full h-full top-0 flex items-end">
-                <h2 className="uppercase md:text-lg font-semibold p-3 bg-white bg-opacity-80 w-full mb-3">
+                <h2 className="uppercase md:text-md font-semibold p-2 bg-white bg-opacity-80 w-full mb-3">
                   {article.cardTitle}
                 </h2>
               </div>

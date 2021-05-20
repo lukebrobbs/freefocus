@@ -54,20 +54,22 @@ export const ArticleModal = ({
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <div className="relative shadow-3xl bg-white bg-opacity-90 rounded py-4 w-11/12 md:w-3/4 2xl:w-1/2 mx-auto">
+            <div className="relative shadow-3xl bg-white bg-opacity-90 rounded py-4 w-11/12 md:w-3/4 2xl:w-1/3 mx-auto lg:h-modal">
               <button
                 className="modal__close__button left-full -ml-8 -mb-20"
                 onClick={() => setIsOpen(false)}
               />
-              <div className="flex flex-col lg:flex-row justify-between">
-                <div className="w-full px-6 pt-10 lg:pt-0 flex items-center justify-center">
+              <div className="flex flex-col lg:flex-row h-full justify-between">
+                <div className="lg:sticky top-0 w-full h-full px-6 pt-10 lg:pt-0 flex items-center justify-center ">
                   <GatsbyImage image={image.gatsbyImageData} alt={title} />
                 </div>
-                <div className="px-6 lg:pr-10 pb-10 pt-6 lg:pt-0 w-full">
+                <div className="px-6 lg:pr-10 pb-10 pt-6 lg:pt-0 w-full h-full lg:overflow-auto ">
                   <Dialog.Title className="uppercase text-lg font-semibold mb-4">
                     {title}
                   </Dialog.Title>
-                  {renderRichText(body)}
+                  <div className="tracking-normal text-md">
+                    {renderRichText(body)}
+                  </div>
                 </div>
               </div>
             </div>

@@ -32,6 +32,9 @@ module.exports = {
       letterSpacing: {
         "x-wide": "0.2rem",
       },
+      height: {
+        modal: "600px",
+      },
     },
   },
   variants: {
