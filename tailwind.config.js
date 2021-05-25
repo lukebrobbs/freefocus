@@ -33,7 +33,7 @@ module.exports = {
         "x-wide": "0.2rem",
       },
       height: {
-        modal: "600px",
+        modal: "500px",
       },
     },
   },
