@@ -33,6 +33,7 @@ module.exports = {
         "x-wide": "0.2rem",
       },
       height: {
+        "half-screen": "50vh",
         modal: "500px",
       },
     },
