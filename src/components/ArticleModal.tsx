@@ -59,7 +59,7 @@ export const ArticleModal = ({
                 className="modal__close__button left-full -ml-8 -mb-20"
                 onClick={() => setIsOpen(false)}
               />
-              <Dialog.Title className="uppercase text-lg font-semibold mb-4 text-center px-6 lg:px-0">
+              <Dialog.Title className="uppercase text-lg font-semibold mb-4 text-center pl-4 pr-8 lg:px-0">
                 {title}
               </Dialog.Title>
               <div className="lg:grid grid-cols-4 gap-4 relative h-full pb-20">
