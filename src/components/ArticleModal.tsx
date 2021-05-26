@@ -9,6 +9,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Contact from "../images/contact.png"
 
 import { Dialog, Transition } from "@headlessui/react"
+import { Link } from "gatsby"
 
 interface ArticleModalProps {
   isOpen: boolean
@@ -70,10 +71,9 @@ export const ArticleModal = ({
                 <div className="tracking-normal flex-1 font-semibold text-sm col-span-2 h-full overflow-auto lg:px-0 mt-6 lg:mt-0 lg:pr-6">
                   {renderRichText(body)}
                   <div className="col-start-4 lg:pr-6">
-                    <a
+                    <Link
                       className="cursor-pointer pt-4 inline-flex items-center"
-                      href={`mailto: test@test.com?subject=subject`}
-                      target="_blank"
+                      to="/contact"
                     >
                       <img
                         src={Contact}
@@ -81,7 +81,7 @@ export const ArticleModal = ({
                         className="m-0 w-7 h-7"
                       />
                       <p className="ml-2">CONTACT</p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
