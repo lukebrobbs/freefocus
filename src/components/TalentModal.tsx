@@ -90,7 +90,7 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
               leaveFrom="transform scale-100 opacity-100"
               leaveTo="transform scale-95 opacity-0"
             >
-              <div className="p-4 pb-8 lg:pb-4 relative text-sm font-semibold flex flex-col lg:flex-row shadow-3xl bg-white bg-opacity-50 max-w-5xl rounded mx-2 md:mx-20 md:overflow-y-scroll lg:overflow-y-auto">
+              <div className="p-4 pb-8 lg:pb-4 relative text-sm font-semibold flex flex-col lg:flex-row shadow-3xl bg-white bg-opacity-80 max-w-5xl rounded mx-2 md:mx-20 md:overflow-y-scroll lg:overflow-y-auto">
                 <button
                   className="modal__close__button left-full -ml-8 top-3"
                   onClick={handleClick}

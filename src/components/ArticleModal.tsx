@@ -6,6 +6,7 @@ import {
 
 import React, { Fragment } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Contact from "../images/contact.png"
 
 import { Dialog, Transition } from "@headlessui/react"
 
@@ -54,20 +55,34 @@ export const ArticleModal = ({
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <div className="relative shadow-3xl bg-white bg-opacity-90 rounded py-4 w-11/12 md:w-3/4 2xl:w-1/3 mx-auto lg:h-modal ">
+            <div className="p-4 lg:pb-4 relative text-sm font-semibold shadow-3xl bg-white bg-opacity-80 max-w-5xl rounded mx-2 md:mx-20 md:overflow-y-scroll lg:overflow-y-auto">
               <button
-                className="modal__close__button left-full -ml-8 -mb-20"
+                className="modal__close__button left-full -ml-8 top-3"
                 onClick={() => setIsOpen(false)}
               />
-              <Dialog.Title className="uppercase text-lg font-semibold mb-4 text-center pl-4 pr-8 lg:px-0">
+              <Dialog.Title className="uppercase text-freefocus-blue font-semibold mb-4 text-center pl-4 pr-8 text-2xl lg:text-3xl">
                 {title}
               </Dialog.Title>
-              <div className="lg:grid grid-cols-4 gap-4 relative h-full pb-20">
-                <div className="col-span-2 lg:sticky top-0 left-0 w-full px-6 pt-2 lg:pt-0">
+              <div className="flex flex-col lg:flex-row relative lg:h-96">
+                <div className="col-span-2 w-48 h-48 mx-auto lg:w-96 lg:h-96 lg:mr-6">
                   <GatsbyImage image={image.gatsbyImageData} alt={title} />
                 </div>
-                <div className="tracking-normal text-lg col-span-2 h-full overflow-auto px-6 lg:px-0 mt-6 lg:mt-0 lg:pr-6">
+                <div className="tracking-normal flex-1 font-semibold text-sm col-span-2 h-full overflow-auto px-6 lg:px-0 mt-6 lg:mt-0 lg:pr-6">
                   {renderRichText(body)}
+                  <div className="col-start-4 lg:pr-6">
+                    <a
+                      className="cursor-pointer pt-4 inline-flex items-center"
+                      href={`mailto: test@test.com?subject=subject`}
+                      target="_blank"
+                    >
+                      <img
+                        src={Contact}
+                        alt="contact us"
+                        className="m-0 w-7 h-7"
+                      />
+                      <p className="ml-2">CONTACT</p>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
