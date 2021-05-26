@@ -60,14 +60,14 @@ export const ArticleModal = ({
                 className="modal__close__button left-full -ml-8 top-3"
                 onClick={() => setIsOpen(false)}
               />
-              <Dialog.Title className="uppercase text-freefocus-blue font-semibold mb-4 text-center pl-4 pr-8 text-2xl lg:text-3xl">
+              <Dialog.Title className="uppercase text-freefocus-blue text-center lg:text-left font-semibold mb-4 px-4 lg:pl-0 text-2xl lg:text-3xl">
                 {title}
               </Dialog.Title>
               <div className="flex flex-col lg:flex-row relative lg:h-96">
                 <div className="col-span-2 w-48 h-48 mx-auto lg:w-96 lg:h-96 lg:mr-6">
                   <GatsbyImage image={image.gatsbyImageData} alt={title} />
                 </div>
-                <div className="tracking-normal flex-1 font-semibold text-sm col-span-2 h-full overflow-auto px-6 lg:px-0 mt-6 lg:mt-0 lg:pr-6">
+                <div className="tracking-normal flex-1 font-semibold text-sm col-span-2 h-full overflow-auto lg:px-0 mt-6 lg:mt-0 lg:pr-6">
                   {renderRichText(body)}
                   <div className="col-start-4 lg:pr-6">
                     <a
