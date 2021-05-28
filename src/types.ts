@@ -3,6 +3,7 @@ import {
   ContentfulRichTextGatsbyReference,
   RenderRichTextData,
 } from "gatsby-source-contentful/rich-text"
+import { string } from "prop-types"
 
 export interface ISEOProps {
   description?: string
@@ -126,6 +127,11 @@ export interface ISocialData {
   instagramFollowerCount?: number
 }
 
+export type ContentfulLinkText = {
+  link: string
+  linkText: string
+} | null
+
 export interface ContentfulArticle {
   id: string
   cardTitle: string
@@ -134,6 +140,8 @@ export interface ContentfulArticle {
   image: any
   articleTitle: string
   content: RenderRichTextData<ContentfulRichTextGatsbyReference>
+  spotifyLink: ContentfulLinkText
+  shopLink: ContentfulLinkText
 }
 
 export interface ContentfulHeadlineArticle {

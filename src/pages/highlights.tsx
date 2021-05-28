@@ -22,6 +22,14 @@ export const ARTICLE_QUERY = graphql`
           cardImage {
             gatsbyImageData(layout: CONSTRAINED)
           }
+          spotifyLink {
+            link
+            linkText
+          }
+          shopLink {
+            link
+            linkText
+          }
         }
       }
     }
@@ -43,6 +51,14 @@ export const ARTICLE_QUERY = graphql`
           }
           content {
             raw
+          }
+          spotifyLink {
+            link
+            linkText
+          }
+          shopLink {
+            link
+            linkText
           }
         }
       }

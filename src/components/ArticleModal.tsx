@@ -7,9 +7,12 @@ import {
 import React, { Fragment } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Contact from "../images/contact.png"
+import Spotify from "../images/spotify.svg"
+import Shop from "../images/shopping-bag.svg"
 
 import { Dialog, Transition } from "@headlessui/react"
 import { Link } from "gatsby"
+import { ContentfulLinkText } from "../types"
 
 interface ArticleModalProps {
   isOpen: boolean
@@ -17,6 +20,8 @@ interface ArticleModalProps {
   title: string
   body: RenderRichTextData<ContentfulRichTextGatsbyReference>
   image: any
+  spotifyLink: ContentfulLinkText
+  shopLink: ContentfulLinkText
 }
 export const ArticleModal = ({
   isOpen,
@@ -24,6 +29,8 @@ export const ArticleModal = ({
   body,
   title,
   image,
+  spotifyLink,
+  shopLink,
 }: ArticleModalProps) => {
   return (
     <Transition show={isOpen} as={Fragment}>
@@ -72,9 +79,43 @@ export const ArticleModal = ({
                   <div className="tracking-normal flex-1 font-semibold text-sm h-full overflow-auto">
                     {renderRichText(body)}
                   </div>
-                  <div className="flex w-full justify-end">
+                  <div className="flex items-center w-full justify-between pt-6">
+                    {spotifyLink && (
+                      <div className="inline-flex items-center">
+                        <img
+                          src={Spotify}
+                          alt="Spotify logo"
+                          className="w-8 h-8 m-0"
+                        />
+                        <a
+                          href={spotifyLink.link}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="uppercase"
+                        >
+                          {spotifyLink.linkText}
+                        </a>
+                      </div>
+                    )}
+                    {shopLink && (
+                      <div className="inline-flex items-center">
+                        <img
+                          src={Shop}
+                          aria-hidden
+                          className="w-6 h-6 m-0 mr-2"
+                        />
+                        <a
+                          href={shopLink.link}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="uppercase"
+                        >
+                          {shopLink.linkText}
+                        </a>
+                      </div>
+                    )}
                     <Link
-                      className="cursor-pointer pt-4 inline-flex items-center"
+                      className="cursor-pointer inline-flex items-center"
                       to="/contact"
                     >
                       <img

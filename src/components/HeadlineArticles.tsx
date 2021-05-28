@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import SwiperCore, { A11y, Autoplay, Navigation } from "swiper"
 import { GatsbyImage, withArtDirection } from "gatsby-plugin-image"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { ContentfulHeadlineArticle } from "../types"
+import { ContentfulHeadlineArticle, ContentfulLinkText } from "../types"
 
 // Import Swiper styles
 import "swiper/swiper.min.css"
@@ -21,10 +21,14 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
     title: string
     body: RenderRichTextData<ContentfulRichTextGatsbyReference>
     image: any
+    spotifyLink: ContentfulLinkText
+    shopLink: ContentfulLinkText
   }>({
     title: articles[0].articleTitle,
     body: articles[0].content,
     image: articles[0].image,
+    shopLink: articles[0].shopLink,
+    spotifyLink: articles[0].spotifyLink,
   })
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -61,6 +65,8 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
                   body: article.content,
                   title: article.articleTitle,
                   image: article.image,
+                  shopLink: article.shopLink,
+                  spotifyLink: article.spotifyLink,
                 })
                 setIsOpen(true)
               }}
