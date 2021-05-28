@@ -56,7 +56,7 @@ export const ArticleModal = ({
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <div className="p-4 lg:pb-4 relative text-sm font-semibold shadow-3xl bg-white bg-opacity-80 max-w-5xl rounded mx-2 md:mx-20 md:overflow-y-scroll lg:overflow-y-auto">
+            <div className="p-4 lg:pb-4 relative text-sm font-semibold shadow-3xl bg-white bg-opacity-80 max-w-3xl rounded mx-2 md:mx-20 md:overflow-y-scroll lg:overflow-y-auto">
               <button
                 className="modal__close__button left-full -ml-8 top-3"
                 onClick={() => setIsOpen(false)}
@@ -65,12 +65,14 @@ export const ArticleModal = ({
                 {title}
               </Dialog.Title>
               <div className="flex flex-col lg:flex-row relative lg:h-96">
-                <div className="col-span-2 w-48 h-48 mx-auto lg:w-96 lg:h-96 lg:mr-6">
+                <div className="w-48 h-48 mx-auto lg:w-96 lg:h-96 lg:mr-6">
                   <GatsbyImage image={image.gatsbyImageData} alt={title} />
                 </div>
-                <div className="tracking-normal flex-1 font-semibold text-sm col-span-2 h-full overflow-auto lg:px-0 mt-6 lg:mt-0 lg:pr-6">
-                  {renderRichText(body)}
-                  <div className="col-start-4 lg:pr-6">
+                <div className=" flex flex-col flex-1 h-full lg:px-0 mt-6 lg:mt-0 lg:pr-2">
+                  <div className="tracking-normal flex-1 font-semibold text-sm h-full overflow-auto">
+                    {renderRichText(body)}
+                  </div>
+                  <div className="flex w-full justify-end">
                     <Link
                       className="cursor-pointer pt-4 inline-flex items-center"
                       to="/contact"
