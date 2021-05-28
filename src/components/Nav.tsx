@@ -30,6 +30,7 @@ export default function Nav() {
                       image={data.contentfulAsset.gatsbyImageData}
                       alt="Free focus Logo"
                       className="block w-52"
+                      loading="eager"
                     />
                   </Link>
                 </div>
