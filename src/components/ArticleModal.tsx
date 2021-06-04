@@ -6,6 +6,7 @@ import {
 
 import React, { Fragment } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
+import cn from "classnames"
 import Contact from "../images/contact.png"
 import Spotify from "../images/spotify.svg"
 import Shop from "../images/shopping-bag.svg"
@@ -22,6 +23,7 @@ interface ArticleModalProps {
   image: any
   spotifyLink: ContentfulLinkText
   shopLink: ContentfulLinkText
+  contactEmail: string
 }
 export const ArticleModal = ({
   isOpen,
@@ -31,6 +33,7 @@ export const ArticleModal = ({
   image,
   spotifyLink,
   shopLink,
+  contactEmail,
 }: ArticleModalProps) => {
   return (
     <Transition show={isOpen} as={Fragment}>
@@ -79,7 +82,12 @@ export const ArticleModal = ({
                   <div className="tracking-normal flex-1 font-semibold text-sm h-full overflow-auto">
                     {renderRichText(body)}
                   </div>
-                  <div className="flex items-center w-full justify-between pt-6">
+                  <div
+                    className={cn("flex items-center w-full pt-6", {
+                      "justify-end": !spotifyLink && !shopLink,
+                      "justify-between": !!spotifyLink || !!shopLink,
+                    })}
+                  >
                     {spotifyLink && (
                       <div className="inline-flex items-center">
                         <img
@@ -114,9 +122,11 @@ export const ArticleModal = ({
                         </a>
                       </div>
                     )}
-                    <Link
+
+                    <a
                       className="cursor-pointer inline-flex items-center"
-                      to="/contact"
+                      href={`mailto: ${contactEmail}`}
+                      target="_blank"
                     >
                       <img
                         src={Contact}
@@ -124,7 +134,7 @@ export const ArticleModal = ({
                         className="m-0 w-7 h-7"
                       />
                       <p className="ml-2">CONTACT</p>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

@@ -30,6 +30,7 @@ export const ARTICLE_QUERY = graphql`
             link
             linkText
           }
+          contactEmail
         }
       }
     }
