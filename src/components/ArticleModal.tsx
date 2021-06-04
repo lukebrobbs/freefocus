@@ -86,11 +86,14 @@ export const ArticleModal = ({
                   </div>
                   <div
                     className={cn(
-                      "flex flex-col md:flex-row md:items-center w-full pt-6 space-y-2 md:space-y-0",
+                      "flex md:flex-row md:items-center w-full pt-6 space-y-2 md:space-y-0",
                       {
                         "justify-end": !spotifyLink && !shopLink && !otherLink,
                         "justify-between":
                           !!spotifyLink || !!shopLink || !!otherLink,
+                        "flex-col":
+                          [spotifyLink, shopLink, otherLink].filter(Boolean)
+                            .length > 1,
                       }
                     )}
                   >
