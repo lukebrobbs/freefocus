@@ -142,6 +142,7 @@ export interface ContentfulArticle {
   content: RenderRichTextData<ContentfulRichTextGatsbyReference>
   spotifyLink: ContentfulLinkText
   shopLink: ContentfulLinkText
+  otherLink: ContentfulLinkText
   contactEmail: string
 }
 

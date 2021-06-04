@@ -13,6 +13,7 @@ export const Article = ({
   spotifyLink,
   shopLink,
   contactEmail,
+  otherLink,
 }: ContentfulArticle) => {
   const [isOpen, setIsOpen] = React.useState(false)
 
@@ -31,6 +32,7 @@ export const Article = ({
         image={image}
         spotifyLink={spotifyLink}
         shopLink={shopLink}
+        otherLink={otherLink}
         contactEmail={contactEmail}
       />
       <div

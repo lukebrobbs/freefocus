@@ -23,12 +23,16 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
     image: any
     spotifyLink: ContentfulLinkText
     shopLink: ContentfulLinkText
+    otherLink: ContentfulLinkText
+    contactEmail: string
   }>({
     title: articles[0].articleTitle,
     body: articles[0].content,
     image: articles[0].image,
     shopLink: articles[0].shopLink,
     spotifyLink: articles[0].spotifyLink,
+    otherLink: articles[0].otherLink,
+    contactEmail: articles[0].contactEmail,
   })
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -67,6 +71,8 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
                   image: article.image,
                   shopLink: article.shopLink,
                   spotifyLink: article.spotifyLink,
+                  otherLink: article.otherLink,
+                  contactEmail: article.contactEmail,
                 })
                 setIsOpen(true)
               }}

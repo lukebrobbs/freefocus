@@ -23,6 +23,7 @@ interface ArticleModalProps {
   image: any
   spotifyLink: ContentfulLinkText
   shopLink: ContentfulLinkText
+  otherLink: ContentfulLinkText
   contactEmail: string
 }
 export const ArticleModal = ({
@@ -34,6 +35,7 @@ export const ArticleModal = ({
   spotifyLink,
   shopLink,
   contactEmail,
+  otherLink,
 }: ArticleModalProps) => {
   return (
     <Transition show={isOpen} as={Fragment}>
@@ -83,10 +85,14 @@ export const ArticleModal = ({
                     {renderRichText(body)}
                   </div>
                   <div
-                    className={cn("flex items-center w-full pt-6", {
-                      "justify-end": !spotifyLink && !shopLink,
-                      "justify-between": !!spotifyLink || !!shopLink,
-                    })}
+                    className={cn(
+                      "flex flex-col md:flex-row md:items-center w-full pt-6 space-y-2 md:space-y-0",
+                      {
+                        "justify-end": !spotifyLink && !shopLink && !otherLink,
+                        "justify-between":
+                          !!spotifyLink || !!shopLink || !!otherLink,
+                      }
+                    )}
                   >
                     {spotifyLink && (
                       <div className="inline-flex items-center">
@@ -102,6 +108,18 @@ export const ArticleModal = ({
                           className="uppercase"
                         >
                           {spotifyLink.linkText}
+                        </a>
+                      </div>
+                    )}
+                    {otherLink && (
+                      <div className="inline-flex items-center ml-8 md:ml-0">
+                        <a
+                          href={otherLink.link}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="uppercase"
+                        >
+                          {otherLink.linkText}
                         </a>
                       </div>
                     )}

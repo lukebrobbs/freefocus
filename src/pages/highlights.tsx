@@ -30,6 +30,10 @@ export const ARTICLE_QUERY = graphql`
             link
             linkText
           }
+          otherLink {
+            link
+            linkText
+          }
           contactEmail
         }
       }
@@ -61,6 +65,11 @@ export const ARTICLE_QUERY = graphql`
             link
             linkText
           }
+          otherLink {
+            link
+            linkText
+          }
+          contactEmail
         }
       }
     }
