@@ -7,36 +7,29 @@
 
 import React, { FunctionComponent } from "react"
 
-import Header from "./header"
-import "./layout.css"
+import Nav from "./Nav"
+import "../styles/layout.css"
 import { ILayoutProps } from "../types"
 
-const Layout: FunctionComponent<ILayoutProps> = ({ children, path }) => {
+const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
   return (
     <>
-      <Header path={path} />
-      <div
-        style={{
-          margin: `0 auto`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer className="footer__wrapper">
-          <div className="footer__line" />
-          <p className="footer__address">
-            Free Focus, First Floor, 17-19 Foley Street, Fitzrovia, London, W1W
-            6DW{" "}
-            <a
-              className="footer__email"
-              href="mailto: info@freefocus.co.uk"
-              target="_blank"
-            >
-              info@freefocus.co.uk
-            </a>
-          </p>
-        </footer>
-      </div>
+      <Nav />
+      <main className="px-4 lg:px-8 mx-auto pt-6">{children}</main>
+      <footer className="w-1/2 mx-auto text-center">
+        <div className="footer__line" />
+        <address className=" text-freefocus-blue uppercase tracking-widest text-2xs font-semibold mt-4 mx-auto mb-12">
+          Free Focus, First Floor, 17-19 Foley Street, Fitzrovia, London, W1W
+          6DW{" "}
+          <a
+            className="text-freefocus-secondary cursor-pointer"
+            href="mailto: info@freefocus.co.uk"
+            target="_blank"
+          >
+            info@freefocus.co.uk
+          </a>
+        </address>
+      </footer>
     </>
   )
 }

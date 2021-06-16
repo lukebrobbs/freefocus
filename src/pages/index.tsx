@@ -1,9 +1,4 @@
-import React, {
-  FunctionComponent,
-  useCallback,
-  useMemo,
-  useEffect,
-} from "react"
+import React, { FunctionComponent, useCallback, useMemo } from "react"
 
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
@@ -11,7 +6,7 @@ import { IIndexPageProps } from "../types"
 import { Talent } from "../components/Talent"
 import shuffle from "lodash.shuffle"
 
-const IndexPage: FunctionComponent<IIndexPageProps> = props => {
+const IndexPage: FunctionComponent<IIndexPageProps> = (props) => {
   const params = useMemo(() => new URLSearchParams(props.location.search), [
     props.location.search,
   ])
@@ -27,9 +22,9 @@ const IndexPage: FunctionComponent<IIndexPageProps> = props => {
   return (
     <>
       <SEO title="Home" />
-      <div>
-        <div className="index__talent__wrapper">
-          {sortedArr.map(talent => {
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-talent gap-5">
+          {sortedArr.map((talent) => {
             return (
               <Talent
                 {...talent}
@@ -55,13 +50,11 @@ export const query = graphql`
       edges {
         node {
           description {
-            json
+            raw
           }
           contactEmail
           image {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED)
           }
           name
           id
@@ -75,6 +68,7 @@ export const query = graphql`
           facebookFollowerCount
           tikTokFollowerCount
           instagramFollowerCount
+          blogPostLink
         }
       }
     }

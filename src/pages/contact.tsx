@@ -2,45 +2,49 @@ import React from "react"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import { IMainLogoQuery } from "../types"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { ContactForm } from "../components/ContactForm"
 import { Map } from "../components/Map"
 
 const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
   return (
-    <div>
-      <div className="contact__container">
-        <SEO title="Contact" />
-        <p className="contact__header">Contact us</p>
-        <div className="footer__line" />
+    <div className="max-w-4xl mx-auto">
+      <SEO title="Contact" />
+      <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
+        Contact us
+      </h1>
+      <div className="h-0.5 bg-freefocus-gray w-full" />
 
-        <div className="contact__wrapper">
-          <div className="contact__logo">
-            <div className="contact__image">
-              <Img fluid={data.contentfulAsset.fluid} alt="Free focus Logo" />
-            </div>
-            <address className="contact__address">
-              <p>FIRST FLOOR</p>
-              <p>17-19 FOLEY STREET</p>
-              <p>FITZROVIA</p>
-              <p>LONDON</p>
-              <p>W1W 6DW</p>
-              <p>
-                <a
-                  className="footer__email"
-                  href="mailto: info@freefocus.co.uk"
-                  target="_blank"
-                >
-                  INFO@FREEFOCUS.CO.UK
-                </a>
-              </p>
-            </address>
-            <div className="contact__map__wrapper">
-              <Map />
-            </div>
+      <div className="grid grid-cols-1 gap-5 m-0 lg:my-12 lg:grid-cols-9">
+        <div className=" lg:col-span-3">
+          <div className="w-4/5 hidden lg:block">
+            <GatsbyImage
+              image={data.contentfulAsset.gatsbyImageData}
+              alt="Free focus Logo"
+              loading="eager"
+            />
           </div>
-          <ContactForm />
+          <address className="hidden lg:block mt-2 leading-6">
+            <p className="px-2 text-2xs font-semibold">
+              FIRST FLOOR <br />
+              17-19 FOLEY STREET <br />
+              FITZROVIA <br />
+              LONDON <br />
+              W1W 6DW <br />
+              <a
+                className="text-freefocus-secondary cursor-pointer"
+                href="mailto: info@freefocus.co.uk"
+                target="_blank"
+              >
+                INFO@FREEFOCUS.CO.UK
+              </a>
+            </p>
+          </address>
+          <div className="mt-8 my-auto h-60">
+            <Map />
+          </div>
         </div>
+        <ContactForm />
       </div>
     </div>
   )
@@ -49,9 +53,7 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
 export const query = graphql`
   query contactQuery {
     contentfulAsset(title: { eq: "Header-Logo" }) {
-      fluid {
-        ...GatsbyContentfulFluid
-      }
+      gatsbyImageData
     }
   }
 `
