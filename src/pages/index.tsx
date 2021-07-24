@@ -2,8 +2,9 @@ import React, { FunctionComponent, useCallback, useMemo } from "react"
 
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
-import { IIndexPageProps } from "../types"
+import { IAllContentfulTalent, IIndexPageProps } from "../types"
 import { Talent } from "../components/Talent"
+//@ts-expect-error
 import shuffle from "lodash.shuffle"
 
 const IndexPage: FunctionComponent<IIndexPageProps> = (props) => {
@@ -13,7 +14,7 @@ const IndexPage: FunctionComponent<IIndexPageProps> = (props) => {
   const talentParam = params.get("talent")
 
   const sortedArr = useCallback(
-    shuffle(props.data.allContentfulTalent.edges).sort((a, b) => {
+    shuffle(props.data.allContentfulTalent.edges).sort((a: any, b: any) => {
       return a.node.tier - b.node.tier
     }),
     []
@@ -24,7 +25,7 @@ const IndexPage: FunctionComponent<IIndexPageProps> = (props) => {
       <SEO title="Home" />
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-talent gap-5">
-          {sortedArr.map((talent) => {
+          {sortedArr.map((talent: IAllContentfulTalent) => {
             return (
               <Talent
                 {...talent}
