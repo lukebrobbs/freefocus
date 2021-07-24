@@ -17,7 +17,7 @@ const CareersPage = ({ data }: ICareersPageProps) => {
       <p className="py-4">{blurb.blurb}</p>
       {vacancies.map((vacancy) => {
         return (
-          <Accordion title={vacancy.title}>
+          <Accordion title={vacancy.title} key={vacancy.title}>
             If you're unhappy with your purchase for any reason, email us within
             90 days and we'll refund you in full, no questions asked.
           </Accordion>

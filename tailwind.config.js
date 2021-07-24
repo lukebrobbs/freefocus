@@ -1,4 +1,5 @@
 module.exports = {
+  jit: true,
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -43,6 +44,9 @@ module.exports = {
       fontWeight: ["hover", "focus"],
       backgroundColor: ["disabled"],
       opacity: ["disabled"],
+      ringWidth: ["focus-visible"],
+      ringOpacity: ["focus-visible"],
+      ringColor: ["focus-visible"],
     },
   },
   plugins: [],
