@@ -70,7 +70,10 @@ export interface ICareersPageProps {
       blurb: {
         blurb: string
       }
-      vacancies: { title: string; jobDescription: string }[]
+      vacancies: {
+        title: string
+        jobDescription: RenderRichTextData<ContentfulRichTextGatsbyReference>
+      }[]
     }
   }
 }

@@ -13,8 +13,8 @@ export const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left bg-gray-100 rounded-lg hover:bg-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-freefocus-secondary focus-visible:ring-opacity-75">
-                <span>{title}</span>
+              <Disclosure.Button className="flex justify-between w-full px-4 py-2 text-sm font-medium text-left bg-gray-50 rounded-lg hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-freefocus-secondary focus-visible:ring-opacity-75">
+                <span className="font-bold ">{title}</span>
                 <ChevronUpIcon
                   className={`${
                     open ? "transform rotate-180" : ""
@@ -29,7 +29,7 @@ export const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-500">
+                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm tracking-normal text-gray-500">
                   {children}
                 </Disclosure.Panel>
               </Transition>
