@@ -33,7 +33,7 @@ export const Accordion: React.FC<AccordionProps> = ({
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Disclosure.Panel className="px-4 pt-8 pb-2 text-sm tracking-normal text-gray-500">
+                <Disclosure.Panel className="px-4 pb-2 text-sm tracking-normal text-gray-500">
                   {children}
                 </Disclosure.Panel>
               </Transition>

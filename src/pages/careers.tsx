@@ -24,11 +24,13 @@ const CareersPage = ({ data }: ICareersPageProps) => {
           <Accordion
             title={vacancy.title}
             key={vacancy.title}
-            className="w-full mb-4 relative"
+            className="w-full mb-4"
           >
-            <button className="absolute top-12 right-4 transition-all duration-100 py-1 px-8 bg-freefocus-tertiary text-white text-xs font-semibold cursor-pointer self-center lg:flex hover:bg-opacity-80">
-              Apply now
-            </button>
+            <div className="flex md:justify-end items-center mt-4">
+              <button className="transition-all duration-100 py-1 px-8 bg-freefocus-tertiary text-white text-xs font-semibold cursor-pointer self-center lg:flex hover:bg-opacity-80">
+                Apply now
+              </button>
+            </div>
             {renderRichText(vacancy.jobDescription, richTextOptions)}
           </Accordion>
         )
