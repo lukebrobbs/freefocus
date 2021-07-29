@@ -1,5 +1,5 @@
 import * as React from "react"
-import { BLOCKS } from "@contentful/rich-text-types"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { Options } from "@contentful/rich-text-react-renderer"
 
 export const richTextOptions: Options = {
@@ -17,5 +17,9 @@ export const richTextOptions: Options = {
       <h4 className="text-md font-semibold mb-2 uppercase">{children}</h4>
     ),
     [BLOCKS.PARAGRAPH]: (_, children) => <p className="mb-4">{children}</p>,
+    [BLOCKS.LIST_ITEM]: (_, children) => <li className="mb-2">{children}</li>,
+    [BLOCKS.UL_LIST]: (_, children) => (
+      <ul className="list-disc mb-4">{children}</ul>
+    ),
   },
 }

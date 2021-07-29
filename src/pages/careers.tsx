@@ -21,12 +21,14 @@ const CareersPage = ({ data }: ICareersPageProps) => {
       </p>
       {vacancies.map((vacancy) => {
         return (
-          <Accordion title={vacancy.title} key={vacancy.title}>
-            <div className="flex md:justify-end items-center mb-6">
-              <button className="transition-all duration-100 py-1 px-8 bg-freefocus-tertiary text-white text-xs font-semibold cursor-pointer self-center lg:flex hover:bg-opacity-80">
-                Apply now
-              </button>
-            </div>
+          <Accordion
+            title={vacancy.title}
+            key={vacancy.title}
+            className="w-full mb-4 relative"
+          >
+            <button className="absolute top-12 right-4 transition-all duration-100 py-1 px-8 bg-freefocus-tertiary text-white text-xs font-semibold cursor-pointer self-center lg:flex hover:bg-opacity-80">
+              Apply now
+            </button>
             {renderRichText(vacancy.jobDescription, richTextOptions)}
           </Accordion>
         )
