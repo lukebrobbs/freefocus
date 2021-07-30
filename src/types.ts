@@ -1,9 +1,7 @@
-import { Document } from "@contentful/rich-text-types"
 import {
   ContentfulRichTextGatsbyReference,
   RenderRichTextData,
 } from "gatsby-source-contentful/rich-text"
-import { string } from "prop-types"
 
 export interface ISEOProps {
   description?: string
@@ -63,6 +61,22 @@ export interface IIndexPageProps {
   }
   location: Location
   path: string
+}
+
+export interface ICareersPageProps {
+  data: {
+    contentfulCareers: {
+      title: string
+      blurb: {
+        blurb: string
+      }
+      vacancies: {
+        title: string
+        applyNowLink: string
+        jobDescription: RenderRichTextData<ContentfulRichTextGatsbyReference>
+      }[]
+    }
+  }
 }
 
 export interface IMainLogoQuery {

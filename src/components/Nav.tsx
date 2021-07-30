@@ -63,6 +63,14 @@ export default function Nav() {
                   </Link>
                   <Link
                     className="nav__listItem inline-flex flex-col justify-between items-center transition-color uppercase px-3 py-2 text-sm font-medium hover:text-freefocus-blue hover:font-bold"
+                    to="/careers"
+                    data-text="Careers"
+                    activeClassName="font-bold text-freefocus-blue"
+                  >
+                    Careers
+                  </Link>
+                  <Link
+                    className="nav__listItem inline-flex flex-col justify-between items-center transition-color uppercase px-3 py-2 text-sm font-medium hover:text-freefocus-blue hover:font-bold"
                     to="/contact"
                     data-text="Contact"
                     activeClassName="font-bold text-freefocus-blue"
@@ -120,6 +128,15 @@ export default function Nav() {
                     className="inline-block w-full py-2"
                   >
                     About
+                  </Link>
+                </Disclosure.Button>
+                <Disclosure.Button className="uppercase px-3 text-sm font-medium text-left hover:bg-gray-100">
+                  <Link
+                    to="/careers"
+                    activeClassName="text-freefocus-blue font-bold"
+                    className="inline-block w-full py-2"
+                  >
+                    careers
                   </Link>
                 </Disclosure.Button>
                 <Disclosure.Button className="uppercase px-3 text-sm font-medium text-left hover:bg-gray-100">

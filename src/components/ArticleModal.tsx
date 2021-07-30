@@ -12,7 +12,6 @@ import Spotify from "../images/spotify.svg"
 import Shop from "../images/shopping-bag.svg"
 
 import { Dialog, Transition } from "@headlessui/react"
-import { Link } from "gatsby"
 import { ContentfulLinkText } from "../types"
 
 interface ArticleModalProps {
