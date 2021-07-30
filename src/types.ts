@@ -129,6 +129,7 @@ export interface IAboutPageData {
   allContentfulAbout: {
     edges: {
       node: {
+        seoTitle: string
         description: RenderRichTextData<ContentfulRichTextGatsbyReference>
         instagramUsername: string
         pageHeader: string
