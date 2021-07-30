@@ -16,7 +16,7 @@ const CareersPage = ({ data }: ICareersPageProps) => {
       </h1>
       <div className="h-0.5 bg-freefocus-gray w-full mb-10" />
       <h2 className="text-2xl font-semibold mb-2 uppercase">{title}</h2>
-      <p className="py-4 tracking-normal font-semibold text-sm">
+      <p className="pb-6 tracking-normal font-semibold text-sm">
         {blurb.blurb}
       </p>
       <h2 className="text-lg font-semibold mb-4 uppercase">
