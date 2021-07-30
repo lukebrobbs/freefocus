@@ -172,16 +172,16 @@ export interface ContentfulArticle {
 
 export interface ContentfulHeadlineArticle {
   title: string
-  articles: ContentfulArticle[]
+  articles: { articles: ContentfulArticle[] }
 }
 
 export interface ContentfulArticleData {
-  allContentfulArticle: {
-    edges: {
-      node: ContentfulArticle
-    }[]
-  }
-  contentfulHeadlineArticles: {
-    articles: ContentfulHeadlineArticle
+  contentfulHighlightsPage: {
+    seoTitle: string
+    seoDescription: {
+      seoDescription: string
+    }
+    articles: ContentfulArticle[]
+    highlightArticles: ContentfulHeadlineArticle
   }
 }

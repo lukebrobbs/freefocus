@@ -16,7 +16,6 @@ export const Article = ({
   otherLink,
 }: ContentfulArticle) => {
   const [isOpen, setIsOpen] = React.useState(false)
-
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Enter") {
       setIsOpen(true)

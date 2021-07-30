@@ -28,13 +28,13 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
     otherLink: ContentfulLinkText
     contactEmail: string
   }>({
-    title: articles[0].articleTitle,
-    body: articles[0].content,
-    image: articles[0].image,
-    shopLink: articles[0].shopLink,
-    spotifyLink: articles[0].spotifyLink,
-    otherLink: articles[0].otherLink,
-    contactEmail: articles[0].contactEmail,
+    title: articles.articles[0].articleTitle,
+    body: articles.articles[0].content,
+    image: articles.articles[0].image,
+    shopLink: articles.articles[0].shopLink,
+    spotifyLink: articles.articles[0].spotifyLink,
+    otherLink: articles.articles[0].otherLink,
+    contactEmail: articles.articles[0].contactEmail,
   })
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -42,7 +42,6 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
       setIsOpen(true)
     }
   }
-
   return (
     <div className="-mx-4 md:mx-0 rounded-sm">
       <ArticleModal isOpen={isOpen} setIsOpen={setIsOpen} {...currentArticle} />
@@ -55,7 +54,7 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
         autoplay={{ delay: 5000 }}
         className="transition-all duration-200 ease-in-out transform py-6 h-72 rounded-sm hover:scale-102"
       >
-        {articles.map((article) => {
+        {articles.articles.map((article) => {
           const images = withArtDirection(article.cardImage.gatsbyImageData, [
             {
               media: `(min-width: 768px)`,
