@@ -85,6 +85,14 @@ export interface ICareersPageProps {
   }
 }
 
+export interface IContactPageQuery extends IMainLogoQuery {
+  contentfulContactPage: {
+    seoTitle: string
+    seoDescription: {
+      seoDescription: string
+    }
+  }
+}
 export interface IMainLogoQuery {
   contentfulAsset: {
     gatsbyImageData: any

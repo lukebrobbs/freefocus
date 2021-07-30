@@ -1,15 +1,18 @@
 import React from "react"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
-import { IMainLogoQuery } from "../types"
+import { IContactPageQuery } from "../types"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { ContactForm } from "../components/ContactForm"
 import { Map } from "../components/Map"
 
-const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
+const ContactPage = ({ data }: { data: IContactPageQuery }) => {
   return (
     <div className="max-w-4xl mx-auto">
-      <SEO title="Contact" />
+      <SEO
+        title={data.contentfulContactPage.seoTitle}
+        description={data.contentfulContactPage.seoDescription.seoDescription}
+      />
       <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
         Contact us
       </h1>
@@ -52,6 +55,13 @@ const ContactPage = ({ data }: { data: IMainLogoQuery }) => {
 
 export const query = graphql`
   query contactQuery {
+    contentfulContactPage(id: { eq: "d6b9c101-9392-5701-99d0-300361a8f81d" }) {
+      id
+      seoDescription {
+        seoDescription
+      }
+      seoTitle
+    }
     contentfulAsset(title: { eq: "Header-Logo" }) {
       gatsbyImageData
     }
