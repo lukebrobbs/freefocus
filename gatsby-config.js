@@ -7,7 +7,7 @@ module.exports = {
     title: `Free Focus`,
     description: `Free Focus is a bespoke talent management agency, with a passion for the individual.`,
     author: `@lukebrobbin`,
-    image: `https://freefocus.co.uk/images/freefocus-favicon.png'`,
+    image: `https://images.ctfassets.net/zkn87hvzu9h3/3N80ckbxB8c6ofXVI6uXk7/1c8fa729ee8e2fcb580cd7c4340fd743/Mian-LogoII-2-1024x627.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
