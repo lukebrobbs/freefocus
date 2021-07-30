@@ -72,6 +72,7 @@ export interface ICareersPageProps {
       }
       vacancies: {
         title: string
+        applyNowLink: string
         jobDescription: RenderRichTextData<ContentfulRichTextGatsbyReference>
       }[]
     }

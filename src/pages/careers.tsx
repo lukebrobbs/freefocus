@@ -20,6 +20,7 @@ const CareersPage = ({ data }: ICareersPageProps) => {
         {blurb.blurb}
       </p>
       {vacancies.map((vacancy) => {
+        console.log({ vacancy })
         return (
           <Accordion
             title={vacancy.title}
@@ -27,11 +28,22 @@ const CareersPage = ({ data }: ICareersPageProps) => {
             className="w-full mb-4"
           >
             <div className="flex md:justify-end items-center mt-4">
-              <button className="transition-all duration-100 py-1 px-8 bg-freefocus-tertiary text-white text-xs font-semibold cursor-pointer self-center lg:flex hover:bg-opacity-80">
+              <a
+                href={`mailto: ${vacancy.applyNowLink}?subject=${vacancy.title} application`}
+                target="_blank"
+                className="hidden md:inline transition-all duration-100 py-1 px-8 mb-4 md:mb-0 bg-freefocus-tertiary text-white text-xs font-semibold cursor-pointer self-center lg:flex hover:bg-opacity-80"
+              >
                 Apply now
-              </button>
+              </a>
             </div>
             {renderRichText(vacancy.jobDescription, richTextOptions)}
+            <a
+              href={`mailto: ${vacancy.applyNowLink}?subject=${vacancy.title} application`}
+              target="_blank"
+              className="transition-all duration-100 py-1 px-8 mb-4 md:hidden bg-freefocus-tertiary text-white text-xs font-semibold cursor-pointer self-center hover:bg-opacity-80"
+            >
+              Apply now
+            </a>
           </Accordion>
         )
       })}
@@ -48,6 +60,7 @@ export const query = graphql`
       }
       vacancies {
         title
+        applyNowLink
         jobDescription {
           raw
         }
