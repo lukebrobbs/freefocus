@@ -19,8 +19,11 @@ const CareersPage = ({ data }: ICareersPageProps) => {
       <p className="py-4 tracking-normal font-semibold text-sm">
         {blurb.blurb}
       </p>
+      <h2 className="text-lg font-semibold mb-4 uppercase">
+        Current Vacancies
+      </h2>
+
       {vacancies.map((vacancy) => {
-        console.log({ vacancy })
         return (
           <Accordion
             title={vacancy.title}
