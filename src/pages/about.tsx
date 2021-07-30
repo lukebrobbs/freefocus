@@ -15,10 +15,11 @@ const AboutPage = ({ data }: { data: IAboutPageData }) => {
     twitterUsername,
     instagramUsername,
     seoTitle,
+    seoDescription,
   } = data.allContentfulAbout.edges[0].node
   return (
     <div className="max-w-4xl mx-auto">
-      <SEO title={seoTitle} />
+      <SEO title={seoTitle} description={seoDescription.seoDescription} />
       <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
         {pageHeader}
       </h1>
@@ -65,6 +66,9 @@ export const query = graphql`
       edges {
         node {
           seoTitle
+          seoDescription {
+            seoDescription
+          }
           pageHeader
           description {
             raw

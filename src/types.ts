@@ -70,6 +70,9 @@ export interface ICareersPageProps {
     contentfulCareers: {
       title: string
       seoTitle: string
+      seoDescription: {
+        seoDescription: string
+      }
       blurb: {
         blurb: string
       }
@@ -130,6 +133,9 @@ export interface IAboutPageData {
     edges: {
       node: {
         seoTitle: string
+        seoDescription: {
+          seoDescription: string
+        }
         description: RenderRichTextData<ContentfulRichTextGatsbyReference>
         instagramUsername: string
         pageHeader: string

@@ -7,10 +7,11 @@ import { ICareersPageProps } from "../types"
 import { richTextOptions } from "../styles/richTextStyles"
 
 const CareersPage = ({ data }: ICareersPageProps) => {
-  const { title, blurb, vacancies, seoTitle } = data.contentfulCareers
+  const { title, blurb, vacancies, seoTitle, seoDescription } =
+    data.contentfulCareers
   return (
     <div className="max-w-4xl mx-auto">
-      <SEO title={seoTitle} />
+      <SEO title={seoTitle} description={seoDescription.seoDescription} />
       <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
         Careers
       </h1>
@@ -59,6 +60,9 @@ export const query = graphql`
     contentfulCareers(id: { eq: "0a0d8b9f-6751-50e1-844e-c453e5663120" }) {
       title
       seoTitle
+      seoDescription {
+        seoDescription
+      }
       blurb {
         blurb
       }
