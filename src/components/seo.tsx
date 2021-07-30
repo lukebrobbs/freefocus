@@ -15,6 +15,7 @@ const SEO: FunctionComponent<ISEOProps> = ({
   lang,
   meta = [],
   title,
+  image,
 }) => {
   const { site } = useStaticQuery<ISiteMetaQuery>(
     graphql`
@@ -24,6 +25,7 @@ const SEO: FunctionComponent<ISEOProps> = ({
             title
             description
             author
+            image
           }
         }
       }
@@ -31,6 +33,7 @@ const SEO: FunctionComponent<ISEOProps> = ({
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = image || site.siteMetadata.image
 
   return (
     <Helmet
@@ -57,6 +60,10 @@ const SEO: FunctionComponent<ISEOProps> = ({
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: metaImage,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -71,6 +78,10 @@ const SEO: FunctionComponent<ISEOProps> = ({
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          property: `twitter:image`,
+          content: metaImage,
         },
       ].concat(meta)}
     >

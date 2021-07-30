@@ -11,6 +11,7 @@ export interface ISEOProps {
     | { property: string; content: string; name?: undefined }
   >
   title?: string
+  image?: string
 }
 
 export interface ISiteMetaQuery {
@@ -19,6 +20,7 @@ export interface ISiteMetaQuery {
       title: string
       description: string
       author: string
+      image: string
     }
   }
 }
@@ -67,6 +69,7 @@ export interface ICareersPageProps {
   data: {
     contentfulCareers: {
       title: string
+      seoTitle: string
       blurb: {
         blurb: string
       }
