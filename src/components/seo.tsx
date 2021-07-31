@@ -12,7 +12,6 @@ import { ISEOProps, ISiteMetaQuery } from "../types"
 
 const SEO: FunctionComponent<ISEOProps> = ({
   description,
-  lang,
   meta = [],
   title,
   image,
@@ -38,7 +37,7 @@ const SEO: FunctionComponent<ISEOProps> = ({
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: "en-GB",
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
