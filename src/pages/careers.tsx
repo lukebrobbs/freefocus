@@ -15,16 +15,20 @@ const CareersPage = ({ data }: ICareersPageProps) => {
       <h1 className="text-xl font-semibold mb-6 uppercase text-center lg:text-left">
         Careers
       </h1>
-      <div className="h-0.5 bg-freefocus-gray w-full mb-10" />
-      <h2 className="text-2xl font-semibold mb-2 uppercase">{title}</h2>
-      <p className="pb-6 tracking-normal font-semibold text-sm">
-        {blurb.blurb}
-      </p>
+      {vacancies && (
+        <>
+          <div className="h-0.5 bg-freefocus-gray w-full mb-10" />
+          <h2 className="text-2xl font-semibold mb-2 uppercase">{title}</h2>
+          <p className="pb-6 tracking-normal font-semibold text-sm">
+            {blurb.blurb}
+          </p>
+        </>
+      )}
       <h2 className="text-lg font-semibold mb-4 uppercase">
-        Current Vacancies
+        {vacancies ? "Current Vacancies" : "No current vacancies"}
       </h2>
 
-      {vacancies.map((vacancy) => {
+      {vacancies?.map((vacancy) => {
         return (
           <Accordion
             title={vacancy.title}
