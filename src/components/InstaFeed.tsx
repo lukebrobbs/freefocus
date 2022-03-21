@@ -8,7 +8,7 @@ export const InstaFeed = () => {
         <script src="https://snapwidget.com/js/snapwidget.js"></script>
       </Helmet>
       <iframe
-        src="https://snapwidget.com/embed/954657"
+        src="https://snapwidget.com/embed/989923"
         className="snapwidget-widget h-half-screen overflow-auto"
         allowTransparency
         frameBorder="0"
