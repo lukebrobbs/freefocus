@@ -19,8 +19,7 @@ const Layout: FunctionComponent<ILayoutProps> = ({ children }) => {
       <footer className="w-1/2 mx-auto text-center">
         <div className="footer__line" />
         <address className=" text-freefocus-blue uppercase tracking-widest text-2xs font-semibold mt-4 mx-auto mb-12">
-          Free Focus, First Floor, 17-19 Foley Street, Fitzrovia, London, W1W
-          6DW{" "}
+          Free Focus, 12-18 Theobalds Road, London, WC1X 8SL&nbsp;
           <a
             className="text-freefocus-secondary cursor-pointer"
             href="mailto: info@freefocus.co.uk"
