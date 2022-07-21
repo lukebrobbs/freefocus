@@ -14,10 +14,13 @@ export const Article = ({
   shopLink,
   contactEmail,
   otherLink,
-}: ContentfulArticle) => {
-  const [isOpen, setIsOpen] = React.useState(false)
+  id,
+  defaultOpen,
+}: ContentfulArticle & { defaultOpen: boolean }) => {
+  const [isOpen, setIsOpen] = React.useState(defaultOpen)
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Enter") {
+      history.pushState(null, "", `?article=${id}`)
       setIsOpen(true)
     }
   }
@@ -40,7 +43,10 @@ export const Article = ({
         role="button"
         aria-haspopup
         tabIndex={0}
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          history.pushState(null, "", `?article=${id}`)
+          setIsOpen(true)
+        }}
       >
         <GatsbyImage
           image={cardImage.gatsbyImageData}

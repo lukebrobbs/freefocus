@@ -42,6 +42,7 @@ export const ArticleModal = ({
         open={isOpen}
         static
         onClose={() => {
+          history.replaceState(null, "", "/highlights")
           setIsOpen(false)
         }}
         className="fixed z-10 inset-0 overflow-y-auto"

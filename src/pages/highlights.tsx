@@ -1,5 +1,5 @@
 import { graphql } from "gatsby"
-import React from "react"
+import React, { useMemo } from "react"
 import { Article } from "../components/Article"
 import { HeadlineArticles } from "../components/HeadlineArticles"
 import SEO from "../components/seo"
@@ -79,7 +79,19 @@ export const ARTICLE_QUERY = graphql`
     }
   }
 `
-const HighlightsPage = ({ data }: { data: ContentfulArticleData }) => {
+const HighlightsPage = ({
+  data,
+  location,
+}: {
+  data: ContentfulArticleData
+  location: Location
+}) => {
+  const params = useMemo(
+    () => new URLSearchParams(location.search),
+    [location.search]
+  )
+  const articleParam = params.get("article")
+
   return (
     <div className="max-w-4xl mx-auto">
       <SEO
@@ -95,7 +107,13 @@ const HighlightsPage = ({ data }: { data: ContentfulArticleData }) => {
       <HeadlineArticles {...data.contentfulHighlightsPage.highlightArticles} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-2 xs:mx-6 md:mx-0 mt-6">
         {data.contentfulHighlightsPage.articles.map((node) => {
-          return <Article {...node} key={node.id} />
+          return (
+            <Article
+              {...node}
+              key={node.id}
+              defaultOpen={articleParam ? articleParam === node.id : false}
+            />
+          )
         })}
       </div>
     </div>

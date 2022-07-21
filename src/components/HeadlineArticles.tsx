@@ -20,6 +20,7 @@ SwiperCore.use([Navigation, A11y, Autoplay])
 export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
   const [isOpen, setIsOpen] = useState(false)
   const [currentArticle, setCurrentArticle] = useState<{
+    id: string
     title: string
     body: RenderRichTextData<ContentfulRichTextGatsbyReference>
     image: any
@@ -28,6 +29,7 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
     otherLink: ContentfulLinkText
     contactEmail: string
   }>({
+    id: articles.articles[0].id,
     title: articles.articles[0].articleTitle,
     body: articles.articles[0].content,
     image: articles.articles[0].image,
@@ -39,6 +41,7 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
 
   const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Enter") {
+      history.pushState(null, "", `?article=${currentArticle.id}`)
       setIsOpen(true)
     }
   }
@@ -69,6 +72,7 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
               className="bg-gray-800 relative rounded-sm cursor-pointer"
               onClick={() => {
                 setCurrentArticle({
+                  id: article.id,
                   body: article.content,
                   title: article.articleTitle,
                   image: article.image,
@@ -77,6 +81,7 @@ export const HeadlineArticles = ({ articles }: ContentfulHeadlineArticle) => {
                   otherLink: article.otherLink,
                   contactEmail: article.contactEmail,
                 })
+                history.pushState(null, "", `?article=${article.id}`)
                 setIsOpen(true)
               }}
               onKeyPress={handleKeyPress}
