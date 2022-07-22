@@ -65,6 +65,7 @@ export const TalentModal: FunctionComponent<ITalentModalProps> = ({
           open={isOpen}
           static
           onClose={() => {
+            history.replaceState(null, "", "/")
             setIsOpen(false)
           }}
           className="fixed z-10 inset-0 overflow-y-auto"

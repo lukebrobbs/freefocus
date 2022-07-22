@@ -17,10 +17,7 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({
   return (
     <div
       className="transition-all duration-200 ease-in-out text-center transform relative hover:scale-102"
-      id={node.name
-        .toLowerCase()
-        .replace(" ", "+")
-        .trim()}
+      id={node.name.toLowerCase().replace(" ", "+").trim()}
     >
       <TalentModal node={node} isOpen={isOpen} setIsOpen={setIsopen} />
       <div
@@ -29,10 +26,7 @@ export const Talent: FunctionComponent<IAllContentfulTalent> = ({
           history.pushState(
             null,
             "",
-            `?talent=${node.name
-              .toLowerCase()
-              .replace(" ", "+")
-              .trim()}`
+            `?talent=${node.name.toLowerCase().replace(" ", "+").trim()}`
           )
           setIsopen(true)
         }}
