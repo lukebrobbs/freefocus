@@ -10,7 +10,7 @@
     "@heroicons/react": "^1.0.2",
     "@types/react-helmet": "^6.1.2",
     "classnames": "^2.3.1",
-    "gatsby": "^3.10.1",
+    "gatsby": "^4.25.7",
     "gatsby-background-image": "^1.5.3",
     "gatsby-plugin-image": "^1.10.1",
     "gatsby-plugin-manifest": "^3.10.0",
